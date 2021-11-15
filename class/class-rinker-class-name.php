@@ -35,6 +35,7 @@ class Rinker_Class_Name {
 	 * @return string
 	 */
 	public function check_rinker_element( string $the_content ): string {
+		$this->create_class_name();
 		if ( strpos( $the_content, 'yyi-rinker-contents' ) !== false ) {
 
 			$rinker_class_name = [
@@ -49,22 +50,22 @@ class Rinker_Class_Name {
 				'yyi-rinker-link',
 			];
 
-			$replace_class_name = [
-				'ken-rinker-contents',
-				'ken-rinker-img-m',
-				'ken-rinker-box',
-				'ken-rinker-image',
-				'ken-rinker-main-img',
-				'ken-rinker-info',
-				'ken-rinker-title',
-				'ken-rinker-detail',
-				'ken-rinker-link',
-			];
+			$replace_class_name = [];
+			foreach ( $rinker_class_name as $class_name ) {
+				$replace_class_name[ $class_name ] = $this->create_class_name();
+			}
 
 			$replace = str_replace( $rinker_class_name, $replace_class_name, $the_content );
 			return $replace;
 		} else {
 			return $the_content;
 		}
+	}
+
+	/**
+	 * Create random class name.
+	 */
+	private function create_class_name() {
+		return substr( bin2hex( random_bytes( 12 ) ), 0, 12 );
 	}
 }
