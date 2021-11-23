@@ -35,7 +35,6 @@ class Rinker_Class_Name {
 	 * @return string
 	 */
 	public function check_rinker_element( string $the_content ): string {
-		$this->create_class_name();
 		if ( strpos( $the_content, 'yyi-rinker-contents' ) !== false ) {
 
 			$rinker_class_name = [
