@@ -24,3 +24,10 @@ declare(strict_types = 1);
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'You do not have access rights.' );
 }
+
+require_once dirname( __FILE__ ) . '/class/class-abc-settings-page.php';
+
+/**
+ * Start admin page.
+ */
+new Abc_Settings_Page( __FILE__ );
