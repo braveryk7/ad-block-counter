@@ -21,7 +21,7 @@ class Abc_Settings_Page {
 	/**
 	 * WordPress Hook.
 	 *
-	 * @param string $path admin-bar-tools.php path.
+	 * @param string $path ad-block-counter.php path.
 	 */
 	public function __construct( string $path ) {
 		add_action( 'admin_menu', [ $this, 'add_menu' ] );
