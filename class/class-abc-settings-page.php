@@ -20,9 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Abc_Settings_Page {
 	/**
 	 * WordPress Hook.
+	 *
+	 * @param string $path admin-bar-tools.php path.
 	 */
-	public function __construct() {
+	public function __construct( string $path ) {
 		add_action( 'admin_menu', [ $this, 'add_menu' ] );
+		add_filter( 'plugin_action_links_' . plugin_basename( $path ), [ $this, 'add_settings_links' ] );
 	}
 
 	/**
@@ -36,6 +39,17 @@ class Abc_Settings_Page {
 			'ad-block-counter',
 			[ $this, 'abc_settings_page' ]
 		);
+	}
+
+	/**
+	 * Add configuration link to plugin page.
+	 *
+	 * @param array|string $links plugin page setting links.
+	 */
+	public function add_settings_links( array $links ): array {
+		$add_link = '<a href="options-general.php?page=ad-block-counter">' . __( 'Settings', 'ad-block-counter' ) . '</a>';
+		array_unshift( $links, $add_link );
+		return $links;
 	}
 
 	/**
