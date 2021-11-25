@@ -66,6 +66,13 @@ class Abc_Admin_Page {
 
 		$assets = require_once dirname( $this->path ) . '/build/index.asset.php';
 
+		wp_enqueue_style(
+			'abc-style',
+			WP_PLUGIN_URL . '/ad-block-counter/build/index.css',
+			[ 'wp-components' ],
+			$assets['version'],
+		);
+
 		wp_enqueue_script(
 			'abc_script',
 			WP_PLUGIN_URL . '/ad-block-counter/build/index.js',
