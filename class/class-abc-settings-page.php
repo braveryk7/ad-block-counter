@@ -69,8 +69,8 @@ class Abc_Settings_Page {
 		wp_enqueue_script(
 			'abc_script',
 			WP_PLUGIN_URL . '/ad-block-counter/build/index.js',
-			$asset_file['dependencies'],
-			$asset_file['version'],
+			$assets['dependencies'],
+			$assets['version'],
 			true
 		);
 	}
