@@ -1,6 +1,7 @@
 import { render } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
+import './scss/index.scss';
 import { Toggle } from './component/molecules/Toggle';
 
 const AdminPage = () => {
