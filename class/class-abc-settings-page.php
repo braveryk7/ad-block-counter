@@ -19,6 +19,13 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Abc_Settings_Page {
 	/**
+	 * WordPress Hook.
+	 */
+	public function __construct() {
+		add_action( 'admin_menu', [ $this, 'add_menu' ] );
+	}
+
+	/**
 	 * Add Ad Block Counter to admin bar.
 	 */
 	public function add_menu() {
