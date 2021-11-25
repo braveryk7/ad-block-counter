@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Admin settings page.
  */
-class Abc_Settings_Page {
+class Abc_Admin_Page {
 	/**
 	 * WordPress Hook.
 	 *
