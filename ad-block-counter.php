@@ -25,9 +25,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'You do not have access rights.' );
 }
 
-require_once dirname( __FILE__ ) . '/class/class-abc-settings-page.php';
+require_once dirname( __FILE__ ) . '/class/class-abc-admin-page.php';
 
 /**
  * Start admin page.
  */
-new Abc_Settings_Page( __FILE__ );
+new Abc_Admin_Page( __FILE__ );
