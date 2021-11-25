@@ -24,7 +24,9 @@ class Abc_Settings_Page {
 	 * @param string $path ad-block-counter.php path.
 	 */
 	public function __construct( string $path ) {
+		$this->path = $path;
 		add_action( 'admin_menu', [ $this, 'add_menu' ] );
+		add_action( 'admin_enqueue_scripts', [ $this, 'add_scripts' ] );
 		add_filter( 'plugin_action_links_' . plugin_basename( $path ), [ $this, 'add_settings_links' ] );
 	}
 
@@ -50,6 +52,27 @@ class Abc_Settings_Page {
 		$add_link = '<a href="options-general.php?page=ad-block-counter">' . __( 'Settings', 'ad-block-counter' ) . '</a>';
 		array_unshift( $links, $add_link );
 		return $links;
+	}
+
+	/**
+	 * Enqueue scripts.
+	 *
+	 * @param string $hook_shuffix WordPress hook_shuffix.
+	 */
+	public function add_scripts( string $hook_shuffix ) {
+		if ( 'settings_page_ad-block-counter' !== $hook_shuffix ) {
+			return;
+		}
+
+		$assets = require_once dirname( $this->path ) . '/build/index.asset.php';
+
+		wp_enqueue_script(
+			'abc_script',
+			WP_PLUGIN_URL . '/ad-block-counter/build/index.js',
+			$asset_file['dependencies'],
+			$asset_file['version'],
+			true
+		);
 	}
 
 	/**
