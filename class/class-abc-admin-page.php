@@ -27,6 +27,7 @@ class Abc_Admin_Page {
 		$this->path = $path;
 		add_action( 'admin_menu', [ $this, 'add_menu' ] );
 		add_action( 'admin_enqueue_scripts', [ $this, 'add_scripts' ] );
+		add_action( 'rest_api_init', [ $this, 'register' ] );
 		add_filter( 'plugin_action_links_' . plugin_basename( $path ), [ $this, 'add_settings_links' ] );
 	}
 
@@ -79,6 +80,21 @@ class Abc_Admin_Page {
 			$assets['dependencies'],
 			$assets['version'],
 			true
+		);
+	}
+
+	/**
+	 * Set register.
+	 */
+	public function register() {
+		register_setting(
+			'ad-block-counter-settings',
+			'abc_rinker',
+			[
+				'type'         => 'boolean',
+				'show_in_rest' => true,
+				'default'      => get_option( 'abc_rinker', false ),
+			],
 		);
 	}
 
