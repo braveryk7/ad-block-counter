@@ -32,13 +32,13 @@ export const useSetApi: useSetApiType = ( itemKey, value ) => {
 
 				save.success( () => {
 					setNoticeStatus( true );
-					setNoticeValue( 'abt_success' );
-					setNoticeMessage( __( 'Success.', 'admin-bar-tools' ) );
+					setNoticeValue( 'abc_success' );
+					setNoticeMessage( __( 'Success.', 'ad-block-counter' ) );
 				} );
 				save.error( () => {
 					setNoticeStatus( true );
-					setNoticeValue( 'abt_error' );
-					setNoticeMessage( __( 'Error.', 'admin-bar-tools' ) );
+					setNoticeValue( 'abc_error' );
+					setNoticeMessage( __( 'Error.', 'ad-block-counter' ) );
 				} );
 			} );
 		}
