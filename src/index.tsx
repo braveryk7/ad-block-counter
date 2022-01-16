@@ -3,6 +3,7 @@ import { render, createContext, useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 import './scss/index.scss';
+import { ShowRinkerClasses } from './component/molecules/ShowRinkerClasses';
 import { Toggle } from './component/molecules/Toggle';
 import { Items } from './component/organisms/Items';
 import { useGetApi } from './hooks/useGetApi';
@@ -59,6 +60,12 @@ const AdminPage = () => {
 							itemKey="abc_rinker"
 							label={ __( 'Use Rinker', 'ad-block-counter' ) }
 						/>
+					</Items>
+					<Items
+						title={ __( 'Rinker classes', 'ad-block-counter' ) }
+						classValue="rinker-classes"
+					>
+						<ShowRinkerClasses />
 					</Items>
 				</apiContext.Provider>
 			) : (
