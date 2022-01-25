@@ -26,6 +26,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 require_once dirname( __FILE__ ) . '/class/class-abc-admin-page.php';
+require_once dirname( __FILE__ ) . '/class/class-abc-rinker-process.php';
+require_once dirname( __FILE__ ) . '/class/class-abc-activate.php';
 
 /**
  * Start admin page.
@@ -33,35 +35,11 @@ require_once dirname( __FILE__ ) . '/class/class-abc-admin-page.php';
 new Abc_Admin_Page( __FILE__ );
 
 /**
- * Create random strings.
- *
- * @param int $length Length.
+ * Change Rinker class name.
  */
-function random( $length = 12 ) {
-	return substr( bin2hex( random_bytes( $length ) ), 0, $length );
-}
+new Abc_Rinker_Process();
 
-$abc_rinker_classes = get_option( 'abc_rinker_classes' );
-if ( empty( $abc_rinker_classes ) ) {
-	$abc_rinker_classes_value = [
-		'yyi-rinker-contents'    => random(),
-		'yyi-rinker-postid-2248' => random(),
-		'yyi-rinker-img-m'       => random(),
-		'yyi-rinker-catid-1'     => random(),
-		'yyi-rinker-box'         => random(),
-		'yyi-rinker-image'       => random(),
-		'yyi-rinker-main-img'    => random(),
-		'yyi-rinker-info'        => random(),
-		'yyi-rinker-title'       => random(),
-		'yyi-rinker-detail'      => random(),
-		'credit-box'             => random(),
-		'price-box'              => random(),
-		'yyi-rinker-links'       => random(),
-		'freelink1'              => random(),
-		'yyi-rinker-link'        => random(),
-		'amazonlink'             => random(),
-		'rakutenlink'            => random(),
-		'yahoolink'              => random(),
-	];
-	add_option( 'abc_rinker_classes', $abc_rinker_classes_value );
-}
+/**
+ * Plugin activate.
+ */
+new Abc_Activate( __FILE__ );
