@@ -24,7 +24,28 @@ class Abc_Activate {
 	 * @param string $path Plugin base file path.
 	 */
 	public function __construct( $path ) {
+		register_activation_hook( $path, [ $this, 'register_options' ] );
 		register_activation_hook( $path, [ $this, 'create_options' ] );
+	}
+
+	/**
+	 * Register wp_options column.
+	 */
+	public function register_options() {
+		$this->option_exists( 'abc_rinker', false );
+		$this->option_exists( 'abc_rinker_css_version', time() );
+	}
+
+	/**
+	 * Search & create wp_option column.
+	 *
+	 * @param string                $column wp_option column name.
+	 * @param string|int|bool|array $value wp_option value.
+	 */
+	public function option_exists( string $column, $value ) {
+		if ( empty( get_option( $column ) ) ) {
+			add_option( $column, $value );
+		}
 	}
 
 	/**
