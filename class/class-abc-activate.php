@@ -54,9 +54,14 @@ class Abc_Activate {
 	 */
 	public function create_options() {
 		$rinker_classes     = [
+			'rinkerid',
 			'yyi-rinker-contents',
-			'yyi-rinker-postid-2248',
+			'yyi-rinker-postid',
+			'yyi-rinker-thumbnails',
+			'yyi-rinker-design-thumb-img',
+			'yyi-rinker-img-s',
 			'yyi-rinker-img-m',
+			'yyi-rinker-img-l',
 			'yyi-rinker-catid-1',
 			'yyi-rinker-box',
 			'yyi-rinker-image',
@@ -72,6 +77,11 @@ class Abc_Activate {
 			'amazonlink',
 			'rakutenlink',
 			'yahoolink',
+			'yyi_rinker-gutenberg',
+			'rinkerg-richtext',
+			'yyi-rinker-design-tate',
+			'yyi-rinker-design-slim',
+			'yyi-rinker-design-mini',
 		];
 		$abc_rinker_classes = [];
 
