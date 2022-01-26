@@ -24,6 +24,8 @@ class Abc_Rinker_Process {
 	public function __construct() {
 		if ( get_option( 'abc_rinker' ) ) {
 			add_action( 'the_content', [ $this, 'change_rinker_class_name' ] );
+			add_action( 'wp_print_styles', [ $this, 'dequeue_rinker_style' ], 100 );
+			add_action( 'wp_loaded', [ $this, 'remove_rinker_inline_css' ] );
 		}
 	}
 
@@ -59,6 +61,22 @@ class Abc_Rinker_Process {
 			wp_register_style( 'abc_rinker_style', false, [], get_option( 'abc_rinker_css_version' ) );
 			wp_enqueue_style( 'abc_rinker_style' );
 			wp_add_inline_style( 'abc_rinker_style', $rinker_css );
+		}
+	}
+
+	/**
+	 * Dequeue WordPress output Rinker style.
+	 */
+	public function dequeue_rinker_style() {
+		wp_dequeue_style( 'yyi_rinker_stylesheet' );
+	}
+
+	/**
+	 * Remove Rinker inline css.
+	 */
+	public function remove_rinker_inline_css() {
+		if ( class_exists( 'Yyi_Rinker_Plugin' ) ) {
+			remove_action( 'wp_head', array( Yyi_Rinker_Plugin::get_object(), 'base_desing_set' ) );
 		}
 	}
 }
