@@ -33,6 +33,7 @@ class Abc_Activate {
 	 */
 	public function register_options() {
 		$this->option_exists( 'abc_rinker', false );
+		$this->option_exists( 'abc_rinker_classes', $this->create_options() );
 		$this->option_exists( 'abc_rinker_css_version', time() );
 	}
 
@@ -52,30 +53,33 @@ class Abc_Activate {
 	 * Create wp_options column.
 	 */
 	public function create_options() {
-		$abc_rinker_classes = get_option( 'abc_rinker_classes' );
-		if ( empty( $abc_rinker_classes ) ) {
-			$abc_rinker_classes_value = [
-				'yyi-rinker-contents'    => $this->random_class_name(),
-				'yyi-rinker-postid-2248' => $this->random_class_name(),
-				'yyi-rinker-img-m'       => $this->random_class_name(),
-				'yyi-rinker-catid-1'     => $this->random_class_name(),
-				'yyi-rinker-box'         => $this->random_class_name(),
-				'yyi-rinker-image'       => $this->random_class_name(),
-				'yyi-rinker-main-img'    => $this->random_class_name(),
-				'yyi-rinker-info'        => $this->random_class_name(),
-				'yyi-rinker-title'       => $this->random_class_name(),
-				'yyi-rinker-detail'      => $this->random_class_name(),
-				'credit-box'             => $this->random_class_name(),
-				'price-box'              => $this->random_class_name(),
-				'yyi-rinker-links'       => $this->random_class_name(),
-				'freelink1'              => $this->random_class_name(),
-				'yyi-rinker-link'        => $this->random_class_name(),
-				'amazonlink'             => $this->random_class_name(),
-				'rakutenlink'            => $this->random_class_name(),
-				'yahoolink'              => $this->random_class_name(),
-			];
-			add_option( 'abc_rinker_classes', $abc_rinker_classes_value );
+		$rinker_classes     = [
+			'yyi-rinker-contents',
+			'yyi-rinker-postid-2248',
+			'yyi-rinker-img-m',
+			'yyi-rinker-catid-1',
+			'yyi-rinker-box',
+			'yyi-rinker-image',
+			'yyi-rinker-main-img',
+			'yyi-rinker-info',
+			'yyi-rinker-title',
+			'yyi-rinker-detail',
+			'credit-box',
+			'price-box',
+			'yyi-rinker-links',
+			'freelink1',
+			'yyi-rinker-link',
+			'amazonlink',
+			'rakutenlink',
+			'yahoolink',
+		];
+		$abc_rinker_classes = [];
+
+		foreach ( $rinker_classes as $rinker_class ) {
+			$abc_rinker_classes[ $rinker_class ] = $this->random_class_name();
 		}
+
+		return $abc_rinker_classes;
 	}
 
 	/**
