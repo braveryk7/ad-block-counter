@@ -21,6 +21,7 @@ export const SaveButton = ( props: CssEditorPropsType ) => {
 	useSetApi( itemKey!, apiData.abc_add_css! );
 	return (
 		<Button
+			className="css-editor-button"
 			isPrimary={ true }
 			onClick={ () => {
 				saveValue();
