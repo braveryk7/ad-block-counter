@@ -5,6 +5,7 @@ import { __ } from '@wordpress/i18n';
 import './scss/index.scss';
 import { ShowRinkerClasses } from './component/molecules/ShowRinkerClasses';
 import { Toggle } from './component/molecules/Toggle';
+import { CssEditor } from './component/organisms/CssEditor';
 import { Items } from './component/organisms/Items';
 import { useGetApi } from './hooks/useGetApi';
 import { apiContextType, noticeValueType } from './types/useContextType';
@@ -61,6 +62,7 @@ const AdminPage = () => {
 							label={ __( 'Use Rinker', 'ad-block-counter' ) }
 						/>
 					</Items>
+					<CssEditor />
 					<Items
 						title={ __( 'Rinker classes', 'ad-block-counter' ) }
 						classValue="rinker-classes"

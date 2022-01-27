@@ -54,7 +54,7 @@ class Abc_Rinker_Process {
 	private function rinker_css( $replace_class_name ) {
 		if ( function_exists( 'yyi_rinker_style_up_design' ) ) {
 			$rinker_css_file = file_get_contents( WP_PLUGIN_DIR . '/yyi-rinker/css/style.css' );
-			$rinker_css      = $rinker_css_file;
+			$rinker_css      = get_option( 'abc_add_css' ) . $rinker_css_file;
 			foreach ( $replace_class_name as $key => $value ) {
 				$rinker_css = str_replace( $key, $value, $rinker_css );
 			}
