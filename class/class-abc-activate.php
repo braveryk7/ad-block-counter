@@ -32,7 +32,7 @@ class Abc_Activate {
 	 * Register wp_options column.
 	 */
 	public function register_options() {
-		$add_css_init_message = '// Rinkerに追加したいCSSを入力してください\n// 入力されたid/class名は自動で変換されます';
+		$add_css_init_message = "// Rinkerに追加したいCSSを入力してください\n// 入力されたid/class名は自動で変換されます";
 
 		$this->option_exists( 'abc_rinker', false );
 		$this->option_exists( 'abc_rinker_classes', $this->create_options() );
