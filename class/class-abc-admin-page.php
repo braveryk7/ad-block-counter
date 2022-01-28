@@ -152,6 +152,16 @@ class Abc_Admin_Page {
 				'default'      => get_option( 'abc_add_css' ),
 			],
 		);
+
+		register_setting(
+			'ad-block-counter-settings',
+			'abc_logged_in_user',
+			[
+				'type'         => 'boolean',
+				'show_in_rest' => true,
+				'default'      => get_option( 'abc_logged_in_user' ),
+			],
+		);
 	}
 
 	/**
