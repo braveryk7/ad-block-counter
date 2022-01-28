@@ -23,6 +23,29 @@ class Abc_Rinker_Process {
 	 */
 	public function __construct() {
 		add_action( 'init', [ $this, 'check_user_logged_in' ] );
+		$this->check_rinker_installed_active();
+	}
+
+	/**
+	 * Check Rinker installed, active status.
+	 */
+	private function check_rinker_installed_active() {
+		$rinker_file_path = 'yyi-rinker/yyi-rinker.php';
+		$active_plugins   = get_option( 'active_plugins' );
+
+		file_exists( WP_PLUGIN_DIR . '/' . $rinker_file_path ) ? $rinker_installed = 1 : $rinker_installed = 0;
+		array_search( $rinker_file_path, $active_plugins, true ) ? $rinker_active  = 1 : $rinker_active = 0;
+
+		switch ( $rinker_installed + $rinker_active ) {
+			case 1:
+				update_option( 'abc_rinker_status', 1 );
+				break;
+			case 2:
+				update_option( 'abc_rinker_status', 2 );
+				break;
+			default:
+				update_option( 'abc_rinker_status', 0 );
+		}
 	}
 
 	/**
