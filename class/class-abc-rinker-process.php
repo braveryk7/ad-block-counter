@@ -22,10 +22,21 @@ class Abc_Rinker_Process {
 	 * Constructer.
 	 */
 	public function __construct() {
+		add_action( 'init', [ $this, 'check_user_logged_in' ] );
+	}
+
+	/**
+	 * Check user logged in use WordPress action hook.
+	 */
+	public function check_user_logged_in() {
 		if ( get_option( 'abc_rinker' ) ) {
-			add_action( 'the_content', [ $this, 'change_rinker_class_name' ] );
-			add_action( 'wp_print_styles', [ $this, 'dequeue_rinker_style' ], 100 );
-			add_action( 'wp_loaded', [ $this, 'remove_rinker_inline_css' ] );
+			if ( ! is_user_logged_in() || ( is_user_logged_in() && ! get_option( 'abc_logged_in_user' ) ) ) {
+				add_action( 'the_content', [ $this, 'change_rinker_class_name' ] );
+				add_action( 'wp_print_styles', [ $this, 'dequeue_rinker_style' ], 100 );
+				add_action( 'wp_loaded', [ $this, 'remove_rinker_inline_css' ] );
+			} elseif ( is_user_logged_in() && get_option( 'abc_logged_in_user' ) ) {
+				$this->rinker_css();
+			}
 		}
 	}
 
@@ -51,17 +62,17 @@ class Abc_Rinker_Process {
 	 *
 	 * @param array $replace_class_name Rinker class name.
 	 */
-	private function rinker_css( $replace_class_name ) {
-		if ( function_exists( 'yyi_rinker_style_up_design' ) ) {
-			$rinker_css_file = file_get_contents( WP_PLUGIN_DIR . '/yyi-rinker/css/style.css' );
-			$rinker_css      = get_option( 'abc_add_css' ) . $rinker_css_file;
+	private function rinker_css( array $replace_class_name = null ) {
+		$rinker_css_file = file_get_contents( WP_PLUGIN_DIR . '/yyi-rinker/css/style.css' );
+		$rinker_css      = get_option( 'abc_add_css' ) . $rinker_css_file;
+		if ( function_exists( 'yyi_rinker_style_up_design' ) && ! is_null( $replace_class_name ) ) {
 			foreach ( $replace_class_name as $key => $value ) {
 				$rinker_css = str_replace( $key, $value, $rinker_css );
 			}
-			wp_register_style( 'abc_rinker_style', false, [], get_option( 'abc_rinker_css_version' ) );
-			wp_enqueue_style( 'abc_rinker_style' );
-			wp_add_inline_style( 'abc_rinker_style', $rinker_css );
 		}
+		wp_register_style( 'abc_rinker_style', false, [], get_option( 'abc_rinker_css_version' ) );
+		wp_enqueue_style( 'abc_rinker_style' );
+		wp_add_inline_style( 'abc_rinker_style', $rinker_css );
 	}
 
 	/**
