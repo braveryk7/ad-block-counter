@@ -38,6 +38,7 @@ class Abc_Activate {
 		$this->option_exists( 'abc_rinker_classes', $this->create_options() );
 		$this->option_exists( 'abc_rinker_css_version', time() );
 		$this->option_exists( 'abc_add_css', $add_css_init_message );
+		$this->option_exists( 'abc_logged_in_user', false );
 	}
 
 	/**
