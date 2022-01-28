@@ -62,6 +62,21 @@ const AdminPage = () => {
 							label={ __( 'Use Rinker', 'ad-block-counter' ) }
 						/>
 					</Items>
+					<Items
+						title={ __(
+							'ログインユーザー設定',
+							'ad-block-counter'
+						) }
+						classValue={ 'logged-in-user' }
+					>
+						<Toggle
+							itemKey="abc_logged_in_user"
+							label={ __(
+								'WordPressログイン中のユーザーに限り設定を適用させない',
+								'ad-block-counter'
+							) }
+						/>
+					</Items>
 					<CssEditor />
 					<Items
 						title={ __( 'Rinker classes', 'ad-block-counter' ) }
