@@ -7,14 +7,32 @@ import { apiType } from '../../types/apiType';
 // import { rinkerClasses } from '../../utils/RinkerClassName';
 // import { createClassName } from '../../utils/createClassName';
 
-export const Toggle = ( props: any ) => {
+type TogglePropsType = {
+	itemKey: 'abc_rinker' | 'abc_logged_in_user';
+	label: string;
+};
+
+export const Toggle = ( props: TogglePropsType ) => {
 	const { itemKey, label } = props;
 	const { apiData, setApiData } = useContext( apiContext );
+
+	let checked: boolean = false;
+	let setApiValue = false;
+	switch ( itemKey ) {
+		case 'abc_rinker':
+			checked = apiData.abc_rinker!;
+			setApiValue = apiData.abc_rinker!;
+			break;
+		case 'abc_logged_in_user':
+			checked = apiData.abc_logged_in_user!;
+			setApiValue = apiData.abc_logged_in_user!;
+			break;
+	}
 
 	const changeStatus = ( status: boolean ) => {
 		const newItem: apiType = JSON.parse( JSON.stringify( { ...apiData } ) );
 
-		newItem.abc_rinker = status;
+		newItem[ itemKey ] = status;
 		setApiData( newItem );
 	};
 
@@ -30,13 +48,13 @@ export const Toggle = ( props: any ) => {
 	// 	setApiData( newItem );
 	// }
 
-	useSetApi( itemKey, apiData.abc_rinker! );
+	useSetApi( itemKey, setApiValue );
 	// useSetApi( 'abc_rinker_classes', apiData.abc_rinker_classes! );
 
 	return (
 		<ToggleControl
 			label={ label }
-			checked={ apiData.abc_rinker }
+			checked={ checked }
 			onChange={ ( status ) => {
 				changeStatus( status );
 			} }
