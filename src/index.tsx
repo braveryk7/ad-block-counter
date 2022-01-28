@@ -3,17 +3,17 @@ import { render, createContext, useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 import './scss/index.scss';
-import { ShowRinkerClasses } from './component/molecules/ShowRinkerClasses';
-import { Toggle } from './component/molecules/Toggle';
-import { CssEditor } from './component/organisms/CssEditor';
-import { Items } from './component/organisms/Items';
+import { ActivateRinker } from './component/molecules/ActivateRinker';
+import { InstallRinker } from './component/molecules/InstallRinker';
+import { ItemList } from './component/organisms/ItemsList';
 import { useGetApi } from './hooks/useGetApi';
+import { apiType } from './types/apiType';
 import { apiContextType, noticeValueType } from './types/useContextType';
 
 export const apiContext = createContext( {} as apiContextType );
 
 const AdminPage = () => {
-	const [ apiData, setApiData ] = useState( {} );
+	const [ apiData, setApiData ] = useState< apiType >( {} );
 	const [ apiStatus, setApiStatus ] = useState( false );
 	const [ noticeStatus, setNoticeStatus ] = useState( false );
 	const [ noticeValue, setNoticeValue ] = useState(
@@ -23,7 +23,6 @@ const AdminPage = () => {
 	const [ snackbarTimer, setSnackbarTimer ] = useState(
 		setTimeout( () => {} )
 	);
-
 	useGetApi( setApiData, setApiStatus );
 
 	useEffect( () => {
@@ -35,6 +34,17 @@ const AdminPage = () => {
 			);
 		}
 	}, [ noticeStatus ] );
+
+	const mainView = () => {
+		switch ( apiData.abc_rinker_status ) {
+			case 0:
+				return <InstallRinker />;
+			case 1:
+				return <ActivateRinker />;
+			default:
+				return <ItemList />;
+		}
+	};
 
 	return (
 		<div id="wrap">
@@ -53,37 +63,7 @@ const AdminPage = () => {
 						snackbarTimer,
 					} }
 				>
-					<Items
-						title={ __( 'Use Rinker', 'ad-block-counter' ) }
-						classValue="use-rinker"
-					>
-						<Toggle
-							itemKey="abc_rinker"
-							label={ __( 'Use Rinker', 'ad-block-counter' ) }
-						/>
-					</Items>
-					<Items
-						title={ __(
-							'ログインユーザー設定',
-							'ad-block-counter'
-						) }
-						classValue={ 'logged-in-user' }
-					>
-						<Toggle
-							itemKey="abc_logged_in_user"
-							label={ __(
-								'WordPressログイン中のユーザーに限り設定を適用させない',
-								'ad-block-counter'
-							) }
-						/>
-					</Items>
-					<CssEditor />
-					<Items
-						title={ __( 'Rinker classes', 'ad-block-counter' ) }
-						classValue="rinker-classes"
-					>
-						<ShowRinkerClasses />
-					</Items>
+					{ mainView() }
 				</apiContext.Provider>
 			) : (
 				<Placeholder label={ __( 'Data loading', 'admin-bar-tools' ) }>
