@@ -68,6 +68,7 @@ class Abc_Activate {
 			'yyi-rinker-img-l',
 			'yyi-rinker-catid-1',
 			'yyi-rinker-box',
+			'yyi-rinker-images',
 			'yyi-rinker-image',
 			'yyi-rinker-main-img',
 			'yyi-rinker-info',

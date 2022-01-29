@@ -119,6 +119,7 @@ class Abc_Admin_Page {
 							'yyi-rinker-img-l'            => $array_item,
 							'yyi-rinker-catid-1'          => $array_item,
 							'yyi-rinker-box'              => $array_item,
+							'yyi-rinker-images'           => $array_item,
 							'yyi-rinker-image'            => $array_item,
 							'yyi-rinker-main-img'         => $array_item,
 							'yyi-rinker-info'             => $array_item,
