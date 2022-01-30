@@ -1,0 +1,174 @@
+
+.yyi-rinker-design-slim div.yyi-rinker-info ul.yyi-rinker-links li {
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.yyi-rinker-design-slim ul.yyi-rinker-links a.yyi-rinker-link {
+	padding: 10px 24px;
+}
+
+/** ver1.9.2 以降追加 **/
+.yyi-rinker-contents .yyi-rinker-info {
+	padding-left: 10px;
+}
+
+.yyi-rinker-img-s .yyi-rinker-image .yyi-rinker-images img {
+	max-height: 75px;
+}
+
+.yyi-rinker-img-m .yyi-rinker-image .yyi-rinker-images img {
+	max-height: 175px;
+}
+
+.yyi-rinker-img-l .yyi-rinker-image .yyi-rinker-images img {
+	max-height: 200px;
+}
+
+div.yyi-rinker-contents div.yyi-rinker-image {
+	align-items: center;
+	flex-direction: column;
+}
+
+div.yyi-rinker-contents ul.yyi-rinker-thumbnails {
+	border: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	list-style: none;
+	margin: 5px 0;
+	padding: 0;
+}
+
+div.yyi-rinker-contents ul.yyi-rinker-thumbnails li {
+	border: none;
+	box-sizing: content-box;
+	cursor: pointer;
+	height: 32px;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	vertical-align: middle;
+	width: 32px;
+}
+
+div.yyi-rinker-contents ul.yyi-rinker-thumbnails li img {
+	vertical-align: middle;
+}
+
+div.yyi-rinker-contents ul.yyi-rinker-thumbnails li {
+	border: 1px solid #fff;
+}
+
+div.yyi-rinker-contents ul.yyi-rinker-thumbnails li.thumb-active {
+	border: 1px solid #eee;
+}
+
+/* ここから　mini */
+div.yyi-rinker-contents.yyi-rinker-design-mini {
+	background-color: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+/* ボタン非表示 */
+.yyi-rinker-design-mini div.yyi-rinker-info ul.yyi-rinker-links,
+.yyi-rinker-design-mini div.yyi-rinker-info .brand,
+.yyi-rinker-design-mini div.yyi-rinker-info .price-box {
+	display: none;
+}
+
+div.yyi-rinker-contents.yyi-rinker-design-mini .credit-box {
+	text-align: right;
+}
+
+div.yyi-rinker-contents.yyi-rinker-design-mini div.yyi-rinker-info {
+	width: 100%;
+}
+
+.yyi-rinker-design-mini div.yyi-rinker-info div.yyi-rinker-title {
+	line-height: 1.2;
+	margin-bottom: 0;
+	min-height: 2.4em;
+}
+
+.yyi-rinker-design-mini div.yyi-rinker-info div.yyi-rinker-title a {
+	font-size: 12px;
+	text-decoration: none;
+	text-decoration: underline;
+}
+
+div.yyi-rinker-contents.yyi-rinker-design-mini {
+	background-color: #fff;
+	border: none;
+	border-radius: 12px;
+	box-shadow: 0 1px 6px rgb(0 0 0 / 12%);
+	max-width: 100%;
+	position: relative;
+}
+
+div.yyi-rinker-contents.yyi-rinker-design-mini div.yyi-rinker-box {
+	border: none;
+}
+
+.yyi-rinker-design-mini div.yyi-rinker-image {
+	min-width: 60px;
+	width: 60px;
+
+}
+
+div.yyi-rinker-design-mini div.yyi-rinker-image img.yyi-rinker-main-img {
+	max-height: 3.6em;
+}
+
+.yyi-rinker-design-mini div.yyi-rinker-detail div.credit-box {
+	font-size: 10px;
+}
+
+.yyi-rinker-design-mini div.yyi-rinker-detail div.brand,
+.yyi-rinker-design-mini div.yyi-rinker-detail div.price-box {
+	font-size: 10px;
+}
+
+.yyi-rinker-design-mini div.yyi-rinker-info div.yyi-rinker-detail {
+	padding: 0;
+}
+
+.yyi-rinker-design-mini div.yyi-rinker-detail div:not(:last-child) {
+	padding-bottom: 0;
+}
+
+.yyi-rinker-design-mini div.yyi-rinker-box div.yyi-rinker-image a {
+	margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+
+	div.yyi-rinker-contents.yyi-rinker-design-mini div.yyi-rinker-box {
+		padding: 12px;
+	}
+
+	.yyi-rinker-design-mini div.yyi-rinker-box div.yyi-rinker-info {
+		justify-content: center;
+		padding-left: 24px;
+	}
+}
+
+@media (max-width: 767px) {
+
+	div.yyi-rinker-contents.yyi-rinker-design-mini {
+		max-width: 100%;
+	}
+
+	div.yyi-rinker-contents.yyi-rinker-design-mini div.yyi-rinker-box {
+		flex-direction: row;
+		padding: 12px;
+	}
+
+	.yyi-rinker-design-mini div.yyi-rinker-box div.yyi-rinker-info {
+		justify-content: center;
+		margin-bottom: 16px;
+		padding-left: 16px;
+		text-align: left;
+	}
+}

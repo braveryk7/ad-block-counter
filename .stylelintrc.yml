@@ -1,5 +1,7 @@
 extends:
   - '@wordpress/stylelint-config/scss'
+ignoreFiles:
+- assets/css/**/*.css
 plugins:
   - stylelint-order
 rules:
