@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Activate process.
  */
-class Abc_Activate {
+class Abc_Activate extends Abc_Base {
 	/**
 	 * WordPress hook.
 	 *
@@ -34,11 +34,11 @@ class Abc_Activate {
 	public function register_options() {
 		$add_css_init_message = "// Rinkerに追加したいCSSを入力してください\n// 入力されたid/class名は自動で変換されます\n";
 
-		$this->option_exists( 'abc_rinker', false );
-		$this->option_exists( 'abc_rinker_classes', $this->create_options() );
-		$this->option_exists( 'abc_rinker_css_version', time() );
-		$this->option_exists( 'abc_add_css', $add_css_init_message );
-		$this->option_exists( 'abc_logged_in_user', false );
+		$this->option_exists( $this->add_prefix( 'rinker' ), false );
+		$this->option_exists( $this->add_prefix( 'rinker_classes' ), $this->create_options() );
+		$this->option_exists( $this->add_prefix( 'rinker_css_version' ), time() );
+		$this->option_exists( $this->add_prefix( 'add_css' ), $add_css_init_message );
+		$this->option_exists( $this->add_prefix( 'logged_in_user' ), false );
 	}
 
 	/**
@@ -57,40 +57,9 @@ class Abc_Activate {
 	 * Create wp_options column.
 	 */
 	public function create_options() {
-		$rinker_classes     = [
-			'rinkerid',
-			'yyi-rinker-contents',
-			'yyi-rinker-postid',
-			'yyi-rinker-thumbnails',
-			'yyi-rinker-design-thumb-img',
-			'yyi-rinker-img-s',
-			'yyi-rinker-img-m',
-			'yyi-rinker-img-l',
-			'yyi-rinker-catid-1',
-			'yyi-rinker-box',
-			'yyi-rinker-images',
-			'yyi-rinker-image',
-			'yyi-rinker-main-img',
-			'yyi-rinker-info',
-			'yyi-rinker-title',
-			'yyi-rinker-detail',
-			'credit-box',
-			'price-box',
-			'yyi-rinker-links',
-			'freelink1',
-			'yyi-rinker-link',
-			'amazonlink',
-			'rakutenlink',
-			'yahoolink',
-			'yyi_rinker-gutenberg',
-			'rinkerg-richtext',
-			'yyi-rinker-design-tate',
-			'yyi-rinker-design-slim',
-			'yyi-rinker-design-mini',
-		];
 		$abc_rinker_classes = [];
 
-		foreach ( $rinker_classes as $rinker_class ) {
+		foreach ( self::RINKER_CLASSES as $rinker_class ) {
 			$abc_rinker_classes[ $rinker_class ] = $this->random_class_name();
 		}
 

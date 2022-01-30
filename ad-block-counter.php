@@ -19,12 +19,13 @@
  * @since             0.1.0
  */
 
-declare(strict_types = 1);
+declare( strict_types = 1 );
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit( 'You do not have access rights.' );
 }
 
+require_once dirname( __FILE__ ) . '/class/class-abc-base.php';
 require_once dirname( __FILE__ ) . '/class/class-abc-admin-page.php';
 require_once dirname( __FILE__ ) . '/class/class-abc-rinker-process.php';
 require_once dirname( __FILE__ ) . '/class/class-abc-activate.php';
