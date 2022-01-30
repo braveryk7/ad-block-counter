@@ -33,8 +33,8 @@ class Abc_Rinker_Process extends Abc_Base {
 		$rinker_file_path = 'yyi-rinker/yyi-rinker.php';
 		$active_plugins   = get_option( 'active_plugins' );
 
-		file_exists( WP_PLUGIN_DIR . '/' . $rinker_file_path ) ? $rinker_installed = 1 : $rinker_installed = 0;
-		array_search( $rinker_file_path, $active_plugins, true ) ? $rinker_active  = 1 : $rinker_active = 0;
+		file_exists( $this->create_plugin_dir( $rinker_file_path ) ) ? $rinker_installed = 1 : $rinker_installed = 0;
+		array_search( $rinker_file_path, $active_plugins, true ) ? $rinker_active        = 1 : $rinker_active = 0;
 
 		switch ( $rinker_installed + $rinker_active ) {
 			case 1:
