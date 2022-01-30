@@ -55,7 +55,7 @@ class Abc_Base {
 	];
 
 	/**
-	 * Add prefix.
+	 * Return add prefix.
 	 *
 	 * @param string $value After prefix value.
 	 */
