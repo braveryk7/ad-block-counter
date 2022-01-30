@@ -39,4 +39,13 @@ class Abc_Base {
 	protected function create_plugin_url( string $plugin_name ): string {
 		return WP_PLUGIN_URL . '/' . $plugin_name;
 	}
+
+	/**
+	 * Return option group.
+	 * Use register_setting.
+	 * e.g. ad-block-counter-settings
+	 */
+	protected function create_option_group(): string {
+		return self::PLUGIN_NAME . '-settings';
+	}
 }

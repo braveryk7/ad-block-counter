@@ -88,7 +88,7 @@ class Abc_Admin_Page extends Abc_Base {
 	 */
 	public function register() {
 		register_setting(
-			'ad-block-counter-settings',
+			$this->create_option_group(),
 			$this->add_prefix( 'rinker' ),
 			[
 				'type'         => 'boolean',
@@ -102,7 +102,7 @@ class Abc_Admin_Page extends Abc_Base {
 		];
 
 		register_setting(
-			'ad-block-counter-settings',
+			$this->create_option_group(),
 			$this->add_prefix( 'rinker_classes' ),
 			[
 				'show_in_rest' => [
@@ -145,7 +145,7 @@ class Abc_Admin_Page extends Abc_Base {
 		);
 
 		register_setting(
-			'ad-block-counter-settings',
+			$this->create_option_group(),
 			$this->add_prefix( 'add_css' ),
 			[
 				'type'         => 'string',
@@ -155,7 +155,7 @@ class Abc_Admin_Page extends Abc_Base {
 		);
 
 		register_setting(
-			'ad-block-counter-settings',
+			$this->create_option_group(),
 			$this->add_prefix( 'logged_in_user' ),
 			[
 				'type'         => 'boolean',
@@ -165,7 +165,7 @@ class Abc_Admin_Page extends Abc_Base {
 		);
 
 		register_setting(
-			'ad-block-counter-settings',
+			$this->create_option_group(),
 			$this->add_prefix( 'rinker_status' ),
 			[
 				'type'         => 'number',
@@ -179,6 +179,6 @@ class Abc_Admin_Page extends Abc_Base {
 	 * Settings page.
 	 */
 	public function abc_settings_page() {
-		echo '<div id="ad-block-counter-settings"></div>';
+		echo '<div id="' . esc_attr( $this->create_option_group() ) . '"></div>';
 	}
 }
