@@ -21,6 +21,38 @@ class Abc_Base {
 	protected const PREFIX      = 'abc';
 	protected const PLUGIN_NAME = 'ad-block-counter';
 
+	protected const RINKER_CLASSES = [
+		'rinkerid',
+		'yyi-rinker-contents',
+		'yyi-rinker-postid',
+		'yyi-rinker-thumbnails',
+		'yyi-rinker-design-thumb-img',
+		'yyi-rinker-img-s',
+		'yyi-rinker-img-m',
+		'yyi-rinker-img-l',
+		'yyi-rinker-catid-1',
+		'yyi-rinker-box',
+		'yyi-rinker-images',
+		'yyi-rinker-image',
+		'yyi-rinker-main-img',
+		'yyi-rinker-info',
+		'yyi-rinker-title',
+		'yyi-rinker-detail',
+		'credit-box',
+		'price-box',
+		'yyi-rinker-links',
+		'freelink1',
+		'yyi-rinker-link',
+		'amazonlink',
+		'rakutenlink',
+		'yahoolink',
+		'yyi_rinker-gutenberg',
+		'rinkerg-richtext',
+		'yyi-rinker-design-tate',
+		'yyi-rinker-design-slim',
+		'yyi-rinker-design-mini',
+	];
+
 	/**
 	 * Add prefix.
 	 *
