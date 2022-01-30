@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Abc_Base {
 	protected const PREFIX      = 'abc';
-	protected const PLUGIN_NAME = 'ad-block-counter';
+	protected const PLUGIN_SLUG = 'ad-block-counter';
 
 	protected const RINKER_CLASSES = [
 		'rinkerid',
@@ -66,7 +66,7 @@ class Abc_Base {
 	 * Return plugin url.
 	 * e.g. https://expamle.com/wp-content/plugins/ad-block-counter
 	 *
-	 * @param string $plugin_name self::PLUGIN_NAME.
+	 * @param string $plugin_name self::PLUGIN_SLUG.
 	 */
 	protected function create_plugin_url( string $plugin_name ): string {
 		return WP_PLUGIN_URL . '/' . $plugin_name;
@@ -88,7 +88,7 @@ class Abc_Base {
 	 * e.g. ad-block-counter-settings
 	 */
 	protected function create_option_group(): string {
-		return self::PLUGIN_NAME . '-settings';
+		return self::PLUGIN_SLUG . '-settings';
 	}
 
 	/**
