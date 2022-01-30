@@ -82,9 +82,9 @@ class Abc_Rinker_Process extends Abc_Base {
 	 * Output random selector CSS.
 	 */
 	public function rinker_css() {
-		$rinker_css_file_path     = WP_PLUGIN_DIR . '/yyi-rinker/css/style.css';
-		$base_css_file_path       = WP_PLUGIN_DIR . '/ad-block-counter/assets/css/base.css';
-		$not_normal_css_file_path = WP_PLUGIN_DIR . '/ad-block-counter/assets/css/not-normal.css';
+		$rinker_css_file_path     = $this->create_plugin_dir( 'yyi-rinker/css/style.css' );
+		$base_css_file_path       = $this->create_plugin_dir( self::PLUGIN_NAME . '/assets/css/base.css' );
+		$not_normal_css_file_path = $this->create_plugin_dir( self::PLUGIN_NAME . '/assets/css/not-normal.css' );
 		require_once ABSPATH . 'wp-admin/includes/file.php';
 		if ( WP_Filesystem() ) {
 			global $wp_filesystem;
