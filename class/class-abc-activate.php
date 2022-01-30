@@ -57,40 +57,9 @@ class Abc_Activate extends Abc_Base {
 	 * Create wp_options column.
 	 */
 	public function create_options() {
-		$rinker_classes     = [
-			'rinkerid',
-			'yyi-rinker-contents',
-			'yyi-rinker-postid',
-			'yyi-rinker-thumbnails',
-			'yyi-rinker-design-thumb-img',
-			'yyi-rinker-img-s',
-			'yyi-rinker-img-m',
-			'yyi-rinker-img-l',
-			'yyi-rinker-catid-1',
-			'yyi-rinker-box',
-			'yyi-rinker-images',
-			'yyi-rinker-image',
-			'yyi-rinker-main-img',
-			'yyi-rinker-info',
-			'yyi-rinker-title',
-			'yyi-rinker-detail',
-			'credit-box',
-			'price-box',
-			'yyi-rinker-links',
-			'freelink1',
-			'yyi-rinker-link',
-			'amazonlink',
-			'rakutenlink',
-			'yahoolink',
-			'yyi_rinker-gutenberg',
-			'rinkerg-richtext',
-			'yyi-rinker-design-tate',
-			'yyi-rinker-design-slim',
-			'yyi-rinker-design-mini',
-		];
 		$abc_rinker_classes = [];
 
-		foreach ( $rinker_classes as $rinker_class ) {
+		foreach ( self::RINKER_CLASSES as $rinker_class ) {
 			$abc_rinker_classes[ $rinker_class ] = $this->random_class_name();
 		}
 
