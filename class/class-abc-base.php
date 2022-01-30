@@ -41,6 +41,16 @@ class Abc_Base {
 	}
 
 	/**
+	 * Return plugin directory.
+	 * e.g.
+	 *
+	 * @param string $plugin_name Plugin name.
+	 */
+	protected function create_plugin_dir( string $plugin_name ): string {
+		return WP_PLUGIN_DIR . '/' . $plugin_name;
+	}
+
+	/**
 	 * Return option group.
 	 * Use register_setting.
 	 * e.g. ad-block-counter-settings
