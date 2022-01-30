@@ -40,7 +40,7 @@ class Abc_Admin_Page extends Abc_Base {
 			__( 'Ad Block Counter', 'ad-block-counter' ),
 			'administrator',
 			'ad-block-counter',
-			[ $this, 'abc_settings_page' ]
+			[ $this, $this->add_prefix( 'settings_page' ) ]
 		);
 	}
 
