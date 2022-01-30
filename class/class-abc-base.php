@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Ad Block Counter base class.
  */
 class Abc_Base {
-	protected const PREFIX = 'abc_';
+	protected const PREFIX = 'abc';
 
 	/**
 	 * Add prefix.
