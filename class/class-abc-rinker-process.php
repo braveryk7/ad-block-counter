@@ -22,7 +22,6 @@ class Abc_Rinker_Process extends Abc_Base {
 	 * Constructer.
 	 */
 	public function __construct() {
-		self::e_console( 'test' );
 		add_action( 'init', [ $this, 'check_user_logged_in' ] );
 		$this->check_rinker_installed_active();
 	}
