@@ -38,13 +38,13 @@ class Abc_Rinker_Process extends Abc_Base {
 
 		switch ( $rinker_installed + $rinker_active ) {
 			case 1:
-				update_option( self::PREFIX . 'rinker_status', 1 );
+				update_option( $this->add_prefix( 'rinker_status' ), 1 );
 				break;
 			case 2:
-				update_option( self::PREFIX . 'rinker_status', 2 );
+				update_option( $this->add_prefix( 'rinker_status' ), 2 );
 				break;
 			default:
-				update_option( self::PREFIX . 'rinker_status', 0 );
+				update_option( $this->add_prefix( 'rinker_status' ), 0 );
 		}
 	}
 
@@ -52,8 +52,8 @@ class Abc_Rinker_Process extends Abc_Base {
 	 * Check user logged in use WordPress action hook.
 	 */
 	public function check_user_logged_in() {
-		if ( get_option( self::PREFIX . 'rinker' ) ) {
-			if ( ! is_user_logged_in() || ( is_user_logged_in() && ! get_option( self::PREFIX . 'logged_in_user' ) ) ) {
+		if ( get_option( $this->add_prefix( 'rinker' ) ) ) {
+			if ( ! is_user_logged_in() || ( is_user_logged_in() && ! get_option( $this->add_prefix( 'logged_in_user' ) ) ) ) {
 				add_action( 'the_content', [ $this, 'change_rinker_class_name' ] );
 			}
 			add_action( 'wp_print_styles', [ $this, 'dequeue_rinker_style' ], 100 );
@@ -68,7 +68,7 @@ class Abc_Rinker_Process extends Abc_Base {
 	 * @param string $the_content WordPress post content.
 	 */
 	public function change_rinker_class_name( $the_content ) {
-		$rinker_classes = get_option( self::PREFIX . 'rinker_classes' );
+		$rinker_classes = get_option( $this->add_prefix( 'rinker_classes' ) );
 		if ( strpos( $the_content, 'yyi-rinker-contents' ) ) {
 			foreach ( $rinker_classes as $key => $value ) {
 				$the_content = str_replace( $key, $value, $the_content );
@@ -91,7 +91,7 @@ class Abc_Rinker_Process extends Abc_Base {
 			$rinker_css_file = file_exists( $rinker_css_file_path ) ? $wp_filesystem->get_contents( $rinker_css_file_path ) : '';
 		}
 
-		$rinker_css     = get_option( self::PREFIX . 'add_css' );
+		$rinker_css     = get_option( $this->add_prefix( 'add_css' ) );
 		$base_css       = file_exists( $base_css_file_path ) ? $wp_filesystem->get_contents( $base_css_file_path ) : '';
 		$not_normal_css = file_exists( $not_normal_css_file_path ) ? $wp_filesystem->get_contents( $not_normal_css_file_path ) : '';
 
@@ -135,15 +135,15 @@ class Abc_Rinker_Process extends Abc_Base {
 				$rinker_css;
 		}
 
-		if ( ! get_option( self::PREFIX . 'logged_in_user' ) ) {
+		if ( ! get_option( $this->add_prefix( 'logged_in_user' ) ) ) {
 			foreach ( get_option( self::PREFIX . 'rinker_classes' ) as $key => $value ) {
 				$rinker_css = str_replace( $key, $value, $rinker_css );
 			}
 		}
 
-		wp_register_style( self::PREFIX . 'rinker_style', false, [], get_option( self::PREFIX . 'rinker_css_version' ) );
-		wp_enqueue_style( self::PREFIX . 'rinker_style' );
-		wp_add_inline_style( self::PREFIX . 'rinker_style', $rinker_css );
+		wp_register_style( $this->add_prefix( 'rinker_style' ), false, [], get_option( self::PREFIX . 'rinker_css_version' ) );
+		wp_enqueue_style( $this->add_prefix( 'rinker_style' ) );
+		wp_add_inline_style( $this->add_prefix( 'rinker_style' ), $rinker_css );
 	}
 
 	/**
