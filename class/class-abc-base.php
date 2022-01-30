@@ -29,4 +29,14 @@ class Abc_Base {
 	protected function add_prefix( $value ) {
 		return self::PREFIX . '_' . $value;
 	}
+
+	/**
+	 * Return plugin url.
+	 * e.g. https://expamle.com/wp-content/plugins/ad-block-counter
+	 *
+	 * @param string $plugin_name self::PLUGIN_NAME.
+	 */
+	protected function create_plugin_url( string $plugin_name ): string {
+		return WP_PLUGIN_URL . '/' . $plugin_name;
+	}
 }

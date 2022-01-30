@@ -69,14 +69,14 @@ class Abc_Admin_Page extends Abc_Base {
 
 		wp_enqueue_style(
 			$this->add_prefix( 'style' ),
-			WP_PLUGIN_URL . '/ad-block-counter/build/index.css',
+			$this->create_plugin_url( self::PLUGIN_NAME ) . '/build/index.css',
 			[ 'wp-components' ],
 			$assets['version'],
 		);
 
 		wp_enqueue_script(
 			$this->add_prefix( 'script' ),
-			WP_PLUGIN_URL . '/ad-block-counter/build/index.js',
+			$this->create_plugin_url( self::PLUGIN_NAME ) . '/build/index.js',
 			$assets['dependencies'],
 			$assets['version'],
 			true
