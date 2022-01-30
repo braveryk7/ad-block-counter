@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Activate process.
  */
-class Abc_Activate {
+class Abc_Activate extends Abc_Base {
 	/**
 	 * WordPress hook.
 	 *
@@ -34,11 +34,11 @@ class Abc_Activate {
 	public function register_options() {
 		$add_css_init_message = "// Rinkerに追加したいCSSを入力してください\n// 入力されたid/class名は自動で変換されます\n";
 
-		$this->option_exists( 'abc_rinker', false );
-		$this->option_exists( 'abc_rinker_classes', $this->create_options() );
-		$this->option_exists( 'abc_rinker_css_version', time() );
-		$this->option_exists( 'abc_add_css', $add_css_init_message );
-		$this->option_exists( 'abc_logged_in_user', false );
+		$this->option_exists( $this->add_prefix( 'rinker' ), false );
+		$this->option_exists( $this->add_prefix( 'rinker_classes' ), $this->create_options() );
+		$this->option_exists( $this->add_prefix( 'rinker_css_version' ), time() );
+		$this->option_exists( $this->add_prefix( 'add_css' ), $add_css_init_message );
+		$this->option_exists( $this->add_prefix( 'logged_in_user' ), false );
 	}
 
 	/**

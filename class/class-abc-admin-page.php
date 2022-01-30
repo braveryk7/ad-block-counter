@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Admin settings page.
  */
-class Abc_Admin_Page {
+class Abc_Admin_Page extends Abc_Base {
 	/**
 	 * WordPress Hook.
 	 *
@@ -68,14 +68,14 @@ class Abc_Admin_Page {
 		$assets = require_once dirname( $this->path ) . '/build/index.asset.php';
 
 		wp_enqueue_style(
-			'abc-style',
+			$this->add_prefix( 'style' ),
 			WP_PLUGIN_URL . '/ad-block-counter/build/index.css',
 			[ 'wp-components' ],
 			$assets['version'],
 		);
 
 		wp_enqueue_script(
-			'abc_script',
+			$this->add_prefix( 'script' ),
 			WP_PLUGIN_URL . '/ad-block-counter/build/index.js',
 			$assets['dependencies'],
 			$assets['version'],
@@ -89,11 +89,11 @@ class Abc_Admin_Page {
 	public function register() {
 		register_setting(
 			'ad-block-counter-settings',
-			'abc_rinker',
+			$this->add_prefix( 'rinker' ),
 			[
 				'type'         => 'boolean',
 				'show_in_rest' => true,
-				'default'      => get_option( 'abc_rinker', false ),
+				'default'      => get_option( $this->add_prefix( 'rinker' ), false ),
 			],
 		);
 
@@ -103,7 +103,7 @@ class Abc_Admin_Page {
 
 		register_setting(
 			'ad-block-counter-settings',
-			'abc_rinker_classes',
+			$this->add_prefix( 'rinker_classes' ),
 			[
 				'show_in_rest' => [
 					'schema' => [
@@ -146,31 +146,31 @@ class Abc_Admin_Page {
 
 		register_setting(
 			'ad-block-counter-settings',
-			'abc_add_css',
+			$this->add_prefix( 'add_css' ),
 			[
 				'type'         => 'string',
 				'show_in_rest' => true,
-				'default'      => get_option( 'abc_add_css' ),
+				'default'      => get_option( $this->add_prefix( 'add_css' ) ),
 			],
 		);
 
 		register_setting(
 			'ad-block-counter-settings',
-			'abc_logged_in_user',
+			$this->add_prefix( 'logged_in_user' ),
 			[
 				'type'         => 'boolean',
 				'show_in_rest' => true,
-				'default'      => get_option( 'abc_logged_in_user' ),
+				'default'      => get_option( $this->add_prefix( 'logged_in_user' ) ),
 			],
 		);
 
 		register_setting(
 			'ad-block-counter-settings',
-			'abc_rinker_status',
+			$this->add_prefix( 'rinker_status' ),
 			[
 				'type'         => 'number',
 				'show_in_rest' => true,
-				'default'      => get_option( 'abc_rinker_status' ),
+				'default'      => get_option( $this->add_prefix( 'rinker_status' ) ),
 			],
 		);
 	}
