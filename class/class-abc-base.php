@@ -59,7 +59,7 @@ class Abc_Base {
 	 *
 	 * @param string $value After prefix value.
 	 */
-	protected function add_prefix( $value ) {
+	protected function add_prefix( string $value ): string {
 		return self::PREFIX . '_' . $value;
 	}
 
@@ -95,7 +95,7 @@ class Abc_Base {
 	/**
 	 * Return register_settings Rinker properties.
 	 */
-	protected function create_rinker_properties() {
+	protected function create_rinker_properties(): array {
 		$rinker_properties = [];
 		foreach ( self::RINKER_CLASSES as $value ) {
 			$rinker_properties[ $value ] = [
