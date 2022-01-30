@@ -20,6 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Abc_Base {
 	protected const PREFIX      = 'abc';
 	protected const PLUGIN_SLUG = 'ad-block-counter';
+	protected const PLUGIN_NAME = 'Ad Block Counter';
 
 	protected const RINKER_CLASSES = [
 		'rinkerid',
