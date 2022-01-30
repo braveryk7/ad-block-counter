@@ -136,12 +136,12 @@ class Abc_Rinker_Process extends Abc_Base {
 		}
 
 		if ( ! get_option( $this->add_prefix( 'logged_in_user' ) ) ) {
-			foreach ( get_option( self::PREFIX . 'rinker_classes' ) as $key => $value ) {
+			foreach ( get_option( $this->add_prefix( 'rinker_classes' ) ) as $key => $value ) {
 				$rinker_css = str_replace( $key, $value, $rinker_css );
 			}
 		}
 
-		wp_register_style( $this->add_prefix( 'rinker_style' ), false, [], get_option( self::PREFIX . 'rinker_css_version' ) );
+		wp_register_style( $this->add_prefix( 'rinker_style' ), false, [], get_option( $this->add_prefix( 'rinker_css_version' ) ) );
 		wp_enqueue_style( $this->add_prefix( 'rinker_style' ) );
 		wp_add_inline_style( $this->add_prefix( 'rinker_style' ), $rinker_css );
 	}
