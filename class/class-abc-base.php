@@ -92,6 +92,19 @@ class Abc_Base {
 	}
 
 	/**
+	 * Return register_settings Rinker properties.
+	 */
+	protected function create_rinker_properties() {
+		$rinker_properties = [];
+		foreach ( self::RINKER_CLASSES as $value ) {
+			$rinker_properties[ $value ] = [
+				'type' => 'string',
+			];
+		}
+		return $rinker_properties;
+	}
+
+	/**
 	 * Output browser console.
 	 * WARNING: Use debag only!
 	 *
