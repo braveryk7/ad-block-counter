@@ -97,10 +97,6 @@ class Abc_Admin_Page extends Abc_Base {
 			],
 		);
 
-		$array_item = [
-			'type' => 'string',
-		];
-
 		register_setting(
 			$this->create_option_group(),
 			$this->add_prefix( 'rinker_classes' ),
@@ -108,37 +104,7 @@ class Abc_Admin_Page extends Abc_Base {
 				'show_in_rest' => [
 					'schema' => [
 						'type'       => 'object',
-						'properties' => [
-							'rinkerid'                    => $array_item,
-							'yyi-rinker-contents'         => $array_item,
-							'yyi-rinker-postid'           => $array_item,
-							'yyi-rinker-thumbnails'       => $array_item,
-							'yyi-rinker-design-thumb-img' => $array_item,
-							'yyi-rinker-img-s'            => $array_item,
-							'yyi-rinker-img-m'            => $array_item,
-							'yyi-rinker-img-l'            => $array_item,
-							'yyi-rinker-catid-1'          => $array_item,
-							'yyi-rinker-box'              => $array_item,
-							'yyi-rinker-images'           => $array_item,
-							'yyi-rinker-image'            => $array_item,
-							'yyi-rinker-main-img'         => $array_item,
-							'yyi-rinker-info'             => $array_item,
-							'yyi-rinker-title'            => $array_item,
-							'yyi-rinker-detail'           => $array_item,
-							'credit-box'                  => $array_item,
-							'price-box'                   => $array_item,
-							'yyi-rinker-links'            => $array_item,
-							'freelink1'                   => $array_item,
-							'yyi-rinker-link'             => $array_item,
-							'amazonlink'                  => $array_item,
-							'rakutenlink'                 => $array_item,
-							'yahoolink'                   => $array_item,
-							'yyi_rinker-gutenberg'        => $array_item,
-							'rinkerg-richtext'            => $array_item,
-							'yyi-rinker-design-tate'      => $array_item,
-							'yyi-rinker-design-slim'      => $array_item,
-							'yyi-rinker-design-mini'      => $array_item,
-						],
+						'properties' => $this->create_rinker_properties(),
 					],
 				],
 			]
