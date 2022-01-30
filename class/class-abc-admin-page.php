@@ -39,7 +39,7 @@ class Abc_Admin_Page extends Abc_Base {
 			__( 'Ad Block Counter', 'ad-block-counter' ),
 			__( 'Ad Block Counter', 'ad-block-counter' ),
 			'administrator',
-			'ad-block-counter',
+			self::PLUGIN_NAME,
 			[ $this, $this->add_prefix( 'settings_page' ) ]
 		);
 	}
@@ -50,7 +50,7 @@ class Abc_Admin_Page extends Abc_Base {
 	 * @param array|string $links plugin page setting links.
 	 */
 	public function add_settings_links( array $links ): array {
-		$add_link = '<a href="options-general.php?page=ad-block-counter">' . __( 'Settings', 'ad-block-counter' ) . '</a>';
+		$add_link = '<a href="options-general.php?page=' . self::PLUGIN_NAME . '">' . __( 'Settings', 'ad-block-counter' ) . '</a>';
 		array_unshift( $links, $add_link );
 		return $links;
 	}
@@ -61,7 +61,7 @@ class Abc_Admin_Page extends Abc_Base {
 	 * @param string $hook_shuffix WordPress hook_shuffix.
 	 */
 	public function add_scripts( string $hook_shuffix ) {
-		if ( 'settings_page_ad-block-counter' !== $hook_shuffix ) {
+		if ( 'settings_page_' . self::PLUGIN_NAME !== $hook_shuffix ) {
 			return;
 		}
 
