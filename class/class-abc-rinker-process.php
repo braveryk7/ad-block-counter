@@ -82,7 +82,9 @@ class Abc_Rinker_Process {
 	 * Output random selector CSS.
 	 */
 	public function rinker_css() {
-		$rinker_css_file_path = WP_PLUGIN_DIR . '/yyi-rinker/css/style.css';
+		$rinker_css_file_path     = WP_PLUGIN_DIR . '/yyi-rinker/css/style.css';
+		$base_css_file_path       = WP_PLUGIN_DIR . '/ad-block-counter/assets/css/base.css';
+		$not_normal_css_file_path = WP_PLUGIN_DIR . '/ad-block-counter/assets/css/not-normal.css';
 		require_once ABSPATH . 'wp-admin/includes/file.php';
 		if ( WP_Filesystem() ) {
 			global $wp_filesystem;
@@ -90,8 +92,8 @@ class Abc_Rinker_Process {
 		}
 
 		$rinker_css     = get_option( 'abc_add_css' );
-		$css            = '';
-		$css_not_normal = '';
+		$base_css       = file_exists( $base_css_file_path ) ? $wp_filesystem->get_contents( $base_css_file_path ) : '';
+		$not_normal_css = file_exists( $not_normal_css_file_path ) ? $wp_filesystem->get_contents( $not_normal_css_file_path ) : '';
 
 		// Current theme is THE SONIC or THE SONIC Child.
 		if ( 'thesonic' === get_stylesheet() || 'the-sonic-child' === get_stylesheet() ) {
@@ -101,31 +103,31 @@ class Abc_Rinker_Process {
 		switch ( get_option( 'yyi_rinker_design_type' ) ) {
 			// Normal.
 			case 0:
-				$rinker_css .= $css . $rinker_css_file;
+				$rinker_css .= $base_css . $rinker_css_file;
 				break;
 			// Style up.
 			case 10:
-				$rinker_css .= $css . $css_not_normal;
+				$rinker_css .= $base_css . $not_normal_css;
 				$rinker_css .= function_exists( 'yyi_rinker_style_up_design' ) ? yyi_rinker_style_up_design() : '';
 				break;
 			// Flat（THE SONIC）.
 			case 100:
-				$rinker_css .= $css . $css_not_normal;
+				$rinker_css .= $base_css . $not_normal_css;
 				$rinker_css .= function_exists( 'tsnc_rinker_design_flat' ) ? tsnc_rinker_design_flat() : '';
 				break;
 			// Material（THE SONIC）.
 			case 110:
-				$rinker_css .= $css . $css_not_normal;
+				$rinker_css .= $base_css . $css_not_normal;
 				$rinker_css .= function_exists( 'tsnc_rinker_design_material' ) ? tsnc_rinker_design_material() : '';
 				break;
 			// Round（THE SONIC）.
 			case 120:
-				$rinker_css .= $css . $css_not_normal;
+				$rinker_css .= $base_css . $not_normal_css;
 				$rinker_css .= function_exists( 'tsnc_rinker_design_round' ) ? tsnc_rinker_design_round() : '';
 				break;
 			// One color（THE SONIC）.
 			case 130:
-				$rinker_css .= $css . $css_not_normal;
+				$rinker_css .= $base_css . $not_normal_css;
 				$rinker_css .= function_exists( 'tsnc_rinker_onecolor' ) ? tsnc_rinker_onecolor() : '';
 				break;
 			// Non design.
