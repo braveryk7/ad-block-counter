@@ -4,8 +4,6 @@ import { useContext } from '@wordpress/element';
 import { apiContext } from '../..';
 import { useSetApi } from '../../hooks/useSetApi';
 import { apiType } from '../../types/apiType';
-// import { rinkerClasses } from '../../utils/RinkerClassName';
-// import { createClassName } from '../../utils/createClassName';
 
 type TogglePropsType = {
 	itemKey: 'abc_rinker' | 'abc_logged_in_user';
@@ -36,20 +34,7 @@ export const Toggle = ( props: TogglePropsType ) => {
 		setApiData( newItem );
 	};
 
-	// if ( apiData.abc_rinker && ! apiData.abc_rinker_classes ) {
-	// 	const newRinkerClasses: any = {};
-	// 	rinkerClasses.map( ( rinkerClass ) => {
-	// 		return ( newRinkerClasses[ rinkerClass ] = createClassName() );
-	// 	} );
-
-	// 	const newItem: apiType = JSON.parse( JSON.stringify( { ...apiData } ) );
-
-	// 	newItem.abc_rinker_classes = newRinkerClasses;
-	// 	setApiData( newItem );
-	// }
-
 	useSetApi( itemKey, setApiValue );
-	// useSetApi( 'abc_rinker_classes', apiData.abc_rinker_classes! );
 
 	return (
 		<ToggleControl
