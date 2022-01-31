@@ -1,8 +1,10 @@
 import { __ } from '@wordpress/i18n';
 
+import { addPrefix } from '../../utils/constant';
+
 export const InstallRinker = () => {
 	return (
-		<div className="abc-item-wrapper">
+		<div className={ `${ addPrefix( '-item-wrapper' ) }` }>
 			<h2>
 				{ __(
 					'This plugin requires to Rinker installed.',

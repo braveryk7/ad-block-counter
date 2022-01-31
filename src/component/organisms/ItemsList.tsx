@@ -1,5 +1,6 @@
 import { __ } from '@wordpress/i18n';
 
+import { addPrefix } from '../../utils/constant';
 import { Toggle } from '../molecules/Toggle';
 import { CssEditor } from './CssEditor';
 import { Items } from './Items';
@@ -12,7 +13,7 @@ export const ItemList = () => {
 				classValue="use-rinker"
 			>
 				<Toggle
-					itemKey="abc_rinker"
+					itemKey={ `${ addPrefix( 'rinker' ) }` as 'abc_rinker' }
 					label={ __(
 						'Disable ad blocking for Rinker',
 						'ad-block-counter'
@@ -24,7 +25,11 @@ export const ItemList = () => {
 				classValue={ 'logged-in-user' }
 			>
 				<Toggle
-					itemKey="abc_logged_in_user"
+					itemKey={
+						`${ addPrefix(
+							'logged_in_user'
+						) }` as 'abc_logged_in_user'
+					}
 					label={ __(
 						"Don't apply the setting to WordPress logged in users.",
 						'ad-block-counter'

@@ -2,6 +2,7 @@ import { useContext, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 import { apiContext } from '../..';
+import { addPrefix, PREFIX } from '../../utils/constant';
 import { CodeEditor } from '../molecules/CodeEditor';
 import { SaveButton } from '../molecules/SaveButton';
 
@@ -12,13 +13,16 @@ export const CssEditor = () => {
 	);
 
 	return (
-		<div className="abc-item-wrapper abc-css-editor">
+		<div className={ `${ PREFIX }-item-wrapper ${ PREFIX }-css-editor` }>
 			<h2>{ __( 'Edit CSS for Rinker', 'ad-block-counter' ) }</h2>
 			<CodeEditor
 				editorValue={ editorValue }
 				setEditorValue={ setEditorValue }
 			/>
-			<SaveButton itemKey="abc_add_css" editorValue={ editorValue } />
+			<SaveButton
+				itemKey={ `${ addPrefix( 'add_css' ) }` }
+				editorValue={ editorValue }
+			/>
 		</div>
 	);
 };
