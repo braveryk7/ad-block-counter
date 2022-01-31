@@ -3,9 +3,9 @@ import { render, createContext, useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 import './scss/index.scss';
-import { ActivateRinker } from './component/molecules/ActivateRinker';
-import { InstallRinker } from './component/molecules/InstallRinker';
-import { ItemList } from './component/organisms/ItemsList';
+import { ActivateRinker } from './components/molecules/ActivateRinker';
+import { InstallRinker } from './components/molecules/InstallRinker';
+import { ItemList } from './components/organisms/ItemsList';
 import { useGetApi } from './hooks/useGetApi';
 import { apiType } from './types/apiType';
 import { apiContextType, noticeValueType } from './types/useContextType';
