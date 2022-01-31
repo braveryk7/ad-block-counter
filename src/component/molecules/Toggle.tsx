@@ -5,6 +5,7 @@ import { apiContext } from '../..';
 import { useSetApi } from '../../hooks/useSetApi';
 import { TogglePropsType } from '../../types/ComponentsType';
 import { apiType } from '../../types/apiType';
+import { addPrefix } from '../../utils/constant';
 
 export const Toggle = ( props: TogglePropsType ) => {
 	const { itemKey, label } = props;
@@ -13,11 +14,11 @@ export const Toggle = ( props: TogglePropsType ) => {
 	let checked: boolean = false;
 	let setApiValue = false;
 	switch ( itemKey ) {
-		case 'abc_rinker':
+		case addPrefix( 'rinker' ):
 			checked = apiData.abc_rinker!;
 			setApiValue = apiData.abc_rinker!;
 			break;
-		case 'abc_logged_in_user':
+		case addPrefix( 'logged_in_user' ):
 			checked = apiData.abc_logged_in_user!;
 			setApiValue = apiData.abc_logged_in_user!;
 			break;
