@@ -1,7 +1,7 @@
 import { css } from '@codemirror/lang-css';
 import CodeMirror from '@uiw/react-codemirror';
 
-import { CssEditorPropsType } from '../../types/ItemType';
+import { CssEditorPropsType } from '../../types/ComponentsType';
 
 export const CodeEditor = ( props: CssEditorPropsType ) => {
 	const { editorValue, setEditorValue } = props;

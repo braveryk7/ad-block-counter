@@ -3,8 +3,8 @@ import { useContext } from '@wordpress/element';
 
 import { apiContext } from '../..';
 import { useSetApi } from '../../hooks/useSetApi';
+import { TogglePropsType } from '../../types/ComponentsType';
 import { apiType } from '../../types/apiType';
-import { TogglePropsType } from '../../types/componentsType';
 
 export const Toggle = ( props: TogglePropsType ) => {
 	const { itemKey, label } = props;
