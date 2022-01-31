@@ -4,11 +4,7 @@ import { useContext } from '@wordpress/element';
 import { apiContext } from '../..';
 import { useSetApi } from '../../hooks/useSetApi';
 import { apiType } from '../../types/apiType';
-
-type TogglePropsType = {
-	itemKey: 'abc_rinker' | 'abc_logged_in_user';
-	label: string;
-};
+import { TogglePropsType } from '../../types/componentsType';
 
 export const Toggle = ( props: TogglePropsType ) => {
 	const { itemKey, label } = props;
