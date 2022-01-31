@@ -6,6 +6,7 @@ import { __ } from '@wordpress/i18n';
 
 import { apiContext } from '..';
 import { useSetApiType } from '../types/useSetApiType';
+import { addPrefix } from '../utils/constant';
 
 export const useSetApi: useSetApiType = ( itemKey, value ) => {
 	const {
@@ -32,12 +33,12 @@ export const useSetApi: useSetApiType = ( itemKey, value ) => {
 
 				save.success( () => {
 					setNoticeStatus( true );
-					setNoticeValue( 'abc_success' );
+					setNoticeValue( addPrefix( 'success' ) as 'abc_success' );
 					setNoticeMessage( __( 'Success.', 'ad-block-counter' ) );
 				} );
 				save.error( () => {
 					setNoticeStatus( true );
-					setNoticeValue( 'abc_error' );
+					setNoticeValue( addPrefix( 'error' ) as 'abc_error' );
 					setNoticeMessage( __( 'Error.', 'ad-block-counter' ) );
 				} );
 			} );

@@ -3,9 +3,8 @@ import { render, createContext, useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 import './scss/index.scss';
-import { ActivateRinker } from './component/molecules/ActivateRinker';
-import { InstallRinker } from './component/molecules/InstallRinker';
-import { ItemList } from './component/organisms/ItemsList';
+import { RinkerStatus } from './components/atoms/RinkerStatus';
+import { ItemList } from './components/organisms/ItemsList';
 import { useGetApi } from './hooks/useGetApi';
 import { apiType } from './types/apiType';
 import { apiContextType, noticeValueType } from './types/useContextType';
@@ -38,9 +37,9 @@ const AdminPage = () => {
 	const mainView = () => {
 		switch ( apiData.abc_rinker_status ) {
 			case 0:
-				return <InstallRinker />;
+				return <RinkerStatus rinkerStatus={ false } />;
 			case 1:
-				return <ActivateRinker />;
+				return <RinkerStatus rinkerStatus={ true } />;
 			default:
 				return <ItemList />;
 		}

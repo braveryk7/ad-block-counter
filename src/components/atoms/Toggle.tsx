@@ -3,14 +3,9 @@ import { useContext } from '@wordpress/element';
 
 import { apiContext } from '../..';
 import { useSetApi } from '../../hooks/useSetApi';
+import { TogglePropsType } from '../../types/ComponentsType';
 import { apiType } from '../../types/apiType';
-// import { rinkerClasses } from '../../utils/RinkerClassName';
-// import { createClassName } from '../../utils/createClassName';
-
-type TogglePropsType = {
-	itemKey: 'abc_rinker' | 'abc_logged_in_user';
-	label: string;
-};
+import { addPrefix } from '../../utils/constant';
 
 export const Toggle = ( props: TogglePropsType ) => {
 	const { itemKey, label } = props;
@@ -19,11 +14,11 @@ export const Toggle = ( props: TogglePropsType ) => {
 	let checked: boolean = false;
 	let setApiValue = false;
 	switch ( itemKey ) {
-		case 'abc_rinker':
+		case addPrefix( 'rinker' ):
 			checked = apiData.abc_rinker!;
 			setApiValue = apiData.abc_rinker!;
 			break;
-		case 'abc_logged_in_user':
+		case addPrefix( 'logged_in_user' ):
 			checked = apiData.abc_logged_in_user!;
 			setApiValue = apiData.abc_logged_in_user!;
 			break;
@@ -36,20 +31,7 @@ export const Toggle = ( props: TogglePropsType ) => {
 		setApiData( newItem );
 	};
 
-	// if ( apiData.abc_rinker && ! apiData.abc_rinker_classes ) {
-	// 	const newRinkerClasses: any = {};
-	// 	rinkerClasses.map( ( rinkerClass ) => {
-	// 		return ( newRinkerClasses[ rinkerClass ] = createClassName() );
-	// 	} );
-
-	// 	const newItem: apiType = JSON.parse( JSON.stringify( { ...apiData } ) );
-
-	// 	newItem.abc_rinker_classes = newRinkerClasses;
-	// 	setApiData( newItem );
-	// }
-
 	useSetApi( itemKey, setApiValue );
-	// useSetApi( 'abc_rinker_classes', apiData.abc_rinker_classes! );
 
 	return (
 		<ToggleControl
