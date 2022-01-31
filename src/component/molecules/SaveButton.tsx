@@ -4,7 +4,7 @@ import { __ } from '@wordpress/i18n';
 
 import { apiContext } from '../..';
 import { useSetApi } from '../../hooks/useSetApi';
-import { CssEditorPropsType } from '../../types/ItemType';
+import { CssEditorPropsType } from '../../types/ComponentsType';
 import { apiType } from '../../types/apiType';
 
 export const SaveButton = ( props: CssEditorPropsType ) => {
