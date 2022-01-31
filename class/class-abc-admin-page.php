@@ -81,6 +81,12 @@ class Abc_Admin_Page extends Abc_Base {
 			$assets['version'],
 			true
 		);
+
+		wp_set_script_translations(
+			$this->add_prefix( 'script' ),
+			self::PLUGIN_SLUG,
+			$this->create_plugin_dir( self::PLUGIN_SLUG ) . '/languages/js',
+		);
 	}
 
 	/**
