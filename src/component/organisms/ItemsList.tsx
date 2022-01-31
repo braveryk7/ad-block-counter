@@ -1,6 +1,5 @@
 import { __ } from '@wordpress/i18n';
 
-import { ShowRinkerClasses } from '../molecules/ShowRinkerClasses';
 import { Toggle } from '../molecules/Toggle';
 import { CssEditor } from './CssEditor';
 import { Items } from './Items';
@@ -30,12 +29,6 @@ export const ItemList = () => {
 				/>
 			</Items>
 			<CssEditor />
-			<Items
-				title={ __( 'Rinker classes', 'ad-block-counter' ) }
-				classValue="rinker-classes"
-			>
-				<ShowRinkerClasses />
-			</Items>
 		</>
 	);
 };
