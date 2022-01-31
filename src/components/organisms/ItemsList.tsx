@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 
 import { addPrefix } from '../../utils/constant';
 import { Toggle } from '../atoms/Toggle';
-import { CssEditor } from './CssEditor';
+import { CssEditor } from '../molecules/CssEditor';
 import { Items } from './Items';
 
 export const ItemList = () => {
