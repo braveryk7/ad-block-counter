@@ -3,7 +3,7 @@ import { __ } from '@wordpress/i18n';
 
 import { apiContext } from '../..';
 import { addPrefix, PREFIX } from '../../utils/constant';
-import { CodeEditor } from '../molecules/CodeEditor';
+import { CodeEditor } from '../atoms/CodeEditor';
 import { SaveButton } from '../molecules/SaveButton';
 
 export const CssEditor = () => {
