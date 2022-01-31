@@ -2,7 +2,7 @@ import { __ } from '@wordpress/i18n';
 
 import { addPrefix } from '../../utils/constant';
 
-export const ActivateRinker = ( props: { rinkerStatus: boolean } ) => {
+export const RinkerStatus = ( props: { rinkerStatus: boolean } ) => {
 	const disabledTitle = __(
 		'This plugin requires to Rinker enabled.',
 		'ad-block-counter'
