@@ -8,22 +8,25 @@ export const ItemList = () => {
 	return (
 		<>
 			<Items
-				title={ __( 'Use Rinker', 'ad-block-counter' ) }
+				title={ __( 'Use Rinker measures', 'ad-block-counter' ) }
 				classValue="use-rinker"
 			>
 				<Toggle
 					itemKey="abc_rinker"
-					label={ __( 'Use Rinker', 'ad-block-counter' ) }
+					label={ __(
+						'Disable ad blocking for Rinker',
+						'ad-block-counter'
+					) }
 				/>
 			</Items>
 			<Items
-				title={ __( 'ログインユーザー設定', 'ad-block-counter' ) }
+				title={ __( 'Logged in user settings', 'ad-block-counter' ) }
 				classValue={ 'logged-in-user' }
 			>
 				<Toggle
 					itemKey="abc_logged_in_user"
 					label={ __(
-						'WordPressログイン中のユーザーに限り設定を適用させない',
+						"Don't apply the setting to WordPress logged in users.",
 						'ad-block-counter'
 					) }
 				/>

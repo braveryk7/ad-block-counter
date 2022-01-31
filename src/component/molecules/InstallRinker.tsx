@@ -5,13 +5,13 @@ export const InstallRinker = () => {
 		<div className="abc-item-wrapper">
 			<h2>
 				{ __(
-					'このプラグインはRinkerをインストールする必要があります',
+					'This plugin requires to Rinker installed.',
 					'ad-block-counter'
 				) }
 			</h2>
 			<p>
-				{ __( '現在のRinkerの状態', 'ad-block-counter' ) }:{ ' ' }
-				{ __( '未インストール', 'ad-block-counter' ) }
+				{ __( 'Current Rinker status', 'ad-block-counter' ) }:{ ' ' }
+				{ __( 'Uninstalled', 'ad-block-counter' ) }
 			</p>
 			<p>
 				<a
@@ -19,16 +19,13 @@ export const InstallRinker = () => {
 					target="_blank"
 					rel="noreferrer"
 				>
-					{ __( 'Rinker公式サイト', 'ad-block-counter' ) }
+					{ __( 'Rinker Official web site', 'ad-block-counter' ) }
 				</a>
-				{ __(
-					'でRinkerをダウンロード/インストールしてください。',
-					'ad-block-counter'
-				) }
+				{ __( 'to download/install Rinker.', 'ad-block-counter' ) }
 			</p>
 			<p>
 				{ __(
-					'Rinkerは完全無料で利用できる、商品リンク管理プラグインです。',
+					'Rinker is a product link management plugin that is completely free to use.',
 					'ad-block-counter'
 				) }
 			</p>

@@ -13,7 +13,7 @@ export const CssEditor = () => {
 
 	return (
 		<div className="abc-item-wrapper abc-css-editor">
-			<h2>{ __( 'Rinker用CSS編集', 'ad-block-counter' ) }</h2>
+			<h2>{ __( 'Edit CSS for Rinker', 'ad-block-counter' ) }</h2>
 			<CodeEditor
 				editorValue={ editorValue }
 				setEditorValue={ setEditorValue }

@@ -27,7 +27,7 @@ export const SaveButton = ( props: CssEditorPropsType ) => {
 				saveValue();
 			} }
 		>
-			{ __( 'CSSを保存する', 'ad-block-counter' ) }
+			{ __( 'Save CSS', 'ad-block-counter' ) }
 		</Button>
 	);
 };

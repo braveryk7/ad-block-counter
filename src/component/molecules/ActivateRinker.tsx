@@ -5,17 +5,17 @@ export const ActivateRinker = () => {
 		<div className="abc-item-wrapper">
 			<h2>
 				{ __(
-					'このプラグインはRinkerを有効化する必要があります',
+					'This plugin requires to Rinker enabled.',
 					'ad-block-counter'
 				) }
 			</h2>
 			<p>
-				{ __( '現在のRinkerの状態', 'ad-block-counter' ) }:{ ' ' }
-				{ __( '無効', 'ad-block-counter' ) }
+				{ __( 'Current Rinker status', 'ad-block-counter' ) }:{ ' ' }
+				{ __( 'Disabled', 'ad-block-counter' ) }
 			</p>
 			<p>
 				{ __(
-					'インストール済みプラグインページでRinkerを有効化してください。',
+					'Rinker to be enabled on the Installed Plugins page.',
 					'ad-block-counter'
 				) }
 			</p>
