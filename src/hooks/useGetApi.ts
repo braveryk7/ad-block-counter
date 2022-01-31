@@ -12,7 +12,7 @@ export const useGetApi = (
 		api.loadPromise.then( () => {
 			const model = new api.models.Settings();
 
-			model.fetch().then( ( res: WPApiType< any > ) => {
+			model.fetch().then( ( res: WPApiType< apiType > ) => {
 				stateFunc( res );
 				setApiStatus( true );
 			} );
