@@ -4,7 +4,7 @@ import { __ } from '@wordpress/i18n';
 import { apiContext } from '../..';
 import { addPrefix, PREFIX } from '../../utils/constant';
 import { CodeEditor } from '../atoms/CodeEditor';
-import { SaveButton } from '../molecules/SaveButton';
+import { SaveButton } from '../atoms/SaveButton';
 
 export const CssEditor = () => {
 	const { apiData } = useContext( apiContext );
