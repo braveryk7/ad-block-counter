@@ -13,7 +13,9 @@ export const ItemList = () => {
 				classValue="use-rinker"
 			>
 				<Toggle
-					itemKey={ `${ addPrefix( 'rinker' ) }` as 'abc_rinker' }
+					itemKey={
+						`${ addPrefix( 'use_rinker' ) }` as 'abc_use_rinker'
+					}
 					label={ __(
 						'Disable ad blocking for Rinker',
 						'ad-block-counter'

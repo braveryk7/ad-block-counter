@@ -1,5 +1,5 @@
 export type apiType = {
-	abc_rinker?: boolean; // eslint-disable-line
+	abc_use_rinker?: boolean; // eslint-disable-line
 	abc_rinker_classes?: {}; // eslint-disable-line
 	abc_add_css?: string; // eslint-disable-line
 	abc_logged_in_user?: boolean; // eslint-disable-line

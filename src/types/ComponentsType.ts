@@ -1,5 +1,5 @@
 export type TogglePropsType = {
-	itemKey: 'abc_rinker' | 'abc_logged_in_user';
+	itemKey: 'abc_use_rinker' | 'abc_logged_in_user';
 	label: string;
 };
 

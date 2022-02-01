@@ -52,7 +52,7 @@ class Abc_Rinker_Process extends Abc_Base {
 	 * Check user logged in use WordPress action hook.
 	 */
 	public function check_user_logged_in() {
-		if ( get_option( $this->add_prefix( 'rinker' ) ) ) {
+		if ( get_option( $this->add_prefix( 'use_rinker' ) ) ) {
 			if ( ! is_user_logged_in() || ( is_user_logged_in() && ! get_option( $this->add_prefix( 'logged_in_user' ) ) ) ) {
 				add_action( 'the_content', [ $this, 'change_rinker_class_name' ] );
 			}

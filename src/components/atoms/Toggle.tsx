@@ -14,9 +14,9 @@ export const Toggle = ( props: TogglePropsType ) => {
 	let checked: boolean = false;
 	let setApiValue = false;
 	switch ( itemKey ) {
-		case addPrefix( 'rinker' ):
-			checked = apiData.abc_rinker!;
-			setApiValue = apiData.abc_rinker!;
+		case addPrefix( 'use_rinker' ):
+			checked = apiData.abc_use_rinker!;
+			setApiValue = apiData.abc_use_rinker!;
 			break;
 		case addPrefix( 'logged_in_user' ):
 			checked = apiData.abc_logged_in_user!;
