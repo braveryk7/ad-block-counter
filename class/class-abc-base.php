@@ -23,6 +23,15 @@ class Abc_Base {
 	protected const PLUGIN_NAME = 'Ad Block Counter';
 	protected const VERSION     = '0.1.0';
 
+	protected const OPTIONS_COLUMN = [
+		'use_rinker',
+		'rinker_classes',
+		'rinker_css_version',
+		'rinker_status',
+		'add_css',
+		'logged_in_user',
+	];
+
 	protected const RINKER_CLASSES = [
 		'rinkerid',
 		'yyi-rinker-contents',
