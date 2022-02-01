@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Ad Block Counter
- * Description:       Example block written with ESNext standard and JSX support – build step required.
+ * Description:       Ad Block Counter is a WordPress plugin for blocking ads.
  * Requires at least: 5.8.2
  * Requires PHP:      7.3
  * Version:           0.1.0
