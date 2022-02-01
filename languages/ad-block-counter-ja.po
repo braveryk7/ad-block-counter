@@ -5,8 +5,8 @@ msgstr ""
 "Project-Id-Version: Ad Block Counter 0.1.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/ad-block-"
 "counter\n"
-"POT-Creation-Date: 2022-02-01 17:45+0900\n"
-"PO-Revision-Date: 2022-02-01 17:52+0900\n"
+"POT-Creation-Date: 2022-02-02 00:37+0900\n"
+"PO-Revision-Date: 2022-02-02 00:37+0900\n"
 "Last-Translator: Ken-chan\n"
 "Language-Team: \n"
 "Language: ja\n"
@@ -26,15 +26,14 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-3: node_modules\n"
 "X-Poedit-SearchPathExcluded-4: vendor\n"
 
-#: class/class-abc-activate.php:36
-msgid "// Enter the CSS you want to add to Rinker"
-msgstr "// Rinkerに追加したいCSSを入力してください"
+#: class/class-abc-activate.php:46
+msgid "Enter the CSS you want to add to Rinker"
+msgstr "Rinkerに追加したいCSSを入力してください"
 
-#: class/class-abc-activate.php:37
-msgid "// Entered id/class names will be automatically converted"
-msgstr "// 入力されたid/class名は自動で変換されます"
+#: class/class-abc-activate.php:47
+msgid "Entered id/class names will be automatically converted"
+msgstr "入力されたid/class名は自動で変換されます"
 
-#. Plugin Name of the plugin
 #: class/class-abc-admin-page.php:39 class/class-abc-admin-page.php:40
 msgid "Ad Block Counter"
 msgstr "Ad Block Counter"

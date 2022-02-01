@@ -42,8 +42,9 @@ class Abc_Activate extends Abc_Base {
 					break;
 				case 'add_css':
 					$option_value =
-						__( '// Enter the CSS you want to add to Rinker', 'ad-block-counter' ) . "\n" .
-						__( '// Entered id/class names will be automatically converted', 'ad-block-counter' ) . "\n";
+						"/*\n  * " .
+						__( 'Enter the CSS you want to add to Rinker', 'ad-block-counter' ) . "\n  * " .
+						__( 'Entered id/class names will be automatically converted', 'ad-block-counter' ) . "\n  */\n";
 					break;
 				default:
 					$option_value = false;
