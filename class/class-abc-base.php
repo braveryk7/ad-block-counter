@@ -27,6 +27,7 @@ class Abc_Base {
 		'use_rinker',
 		'rinker_classes',
 		'rinker_css_version',
+		'rinker_status',
 		'add_css',
 		'logged_in_user',
 	];
