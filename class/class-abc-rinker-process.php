@@ -86,7 +86,7 @@ class Abc_Rinker_Process extends Abc_Base {
 		$base_css_file_path       = $this->create_plugin_dir( self::PLUGIN_SLUG . '/assets/css/base.css' );
 		$not_normal_css_file_path = $this->create_plugin_dir( self::PLUGIN_SLUG . '/assets/css/not-normal.css' );
 		require_once ABSPATH . 'wp-admin/includes/file.php';
-		if ( WP_Filesystem() ) {
+		if ( WP_Filesystem( request_filesystem_credentials( '', '', false, false, null ) ) ) {
 			global $wp_filesystem;
 			$rinker_css_file = file_exists( $rinker_css_file_path ) ? $wp_filesystem->get_contents( $rinker_css_file_path ) : '';
 		}
