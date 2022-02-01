@@ -32,9 +32,11 @@ class Abc_Activate extends Abc_Base {
 	 * Register wp_options column.
 	 */
 	public function register_options() {
-		$add_css_init_message = "// Rinkerに追加したいCSSを入力してください\n// 入力されたid/class名は自動で変換されます\n";
+		$add_css_init_message =
+			__( '// Enter the CSS you want to add to Rinker', 'ad-block-counter' ) . "\n" .
+			__( '// Entered id/class names will be automatically converted', 'ad-block-counter' ) . "\n";
 
-		$this->option_exists( $this->add_prefix( 'rinker' ), false );
+		$this->option_exists( $this->add_prefix( 'use_rinker' ), false );
 		$this->option_exists( $this->add_prefix( 'rinker_classes' ), $this->create_options() );
 		$this->option_exists( $this->add_prefix( 'rinker_css_version' ), time() );
 		$this->option_exists( $this->add_prefix( 'add_css' ), $add_css_init_message );

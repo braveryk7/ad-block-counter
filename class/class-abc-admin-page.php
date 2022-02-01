@@ -95,11 +95,11 @@ class Abc_Admin_Page extends Abc_Base {
 	public function register() {
 		register_setting(
 			$this->create_option_group(),
-			$this->add_prefix( 'rinker' ),
+			$this->add_prefix( 'use_rinker' ),
 			[
 				'type'         => 'boolean',
 				'show_in_rest' => true,
-				'default'      => get_option( $this->add_prefix( 'rinker' ), false ),
+				'default'      => get_option( $this->add_prefix( 'use_rinker' ), false ),
 			],
 		);
 
