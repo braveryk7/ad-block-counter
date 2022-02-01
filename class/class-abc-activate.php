@@ -32,15 +32,24 @@ class Abc_Activate extends Abc_Base {
 	 * Register wp_options column.
 	 */
 	public function register_options() {
-		$add_css_init_message =
-			__( '// Enter the CSS you want to add to Rinker', 'ad-block-counter' ) . "\n" .
-			__( '// Entered id/class names will be automatically converted', 'ad-block-counter' ) . "\n";
-
-		$this->option_exists( $this->add_prefix( 'use_rinker' ), false );
-		$this->option_exists( $this->add_prefix( 'rinker_classes' ), $this->create_options() );
-		$this->option_exists( $this->add_prefix( 'rinker_css_version' ), time() );
-		$this->option_exists( $this->add_prefix( 'add_css' ), $add_css_init_message );
-		$this->option_exists( $this->add_prefix( 'logged_in_user' ), false );
+		foreach ( self::OPTIONS_COLUMN as $option_name ) {
+			switch ( $option_name ) {
+				case 'rinker_classes':
+					$option_value = $this->create_options();
+					break;
+				case 'rinker_css_version':
+					$option_value = time();
+					break;
+				case 'add_css':
+					$option_value =
+						__( '// Enter the CSS you want to add to Rinker', 'ad-block-counter' ) . "\n" .
+						__( '// Entered id/class names will be automatically converted', 'ad-block-counter' ) . "\n";
+					break;
+				default:
+					$option_value = false;
+			}
+			$this->option_exists( $this->add_prefix( $option_name ), $option_value );
+		}
 	}
 
 	/**
