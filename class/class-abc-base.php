@@ -23,7 +23,7 @@ class Abc_Base {
 	protected const PLUGIN_NAME = 'Ad Block Counter';
 	protected const VERSION     = '0.1.0';
 
-	protected const OPTIONS_COLUMN = [
+	public const OPTIONS_COLUMN = [
 		'use_rinker',
 		'rinker_classes',
 		'rinker_css_version',
@@ -69,7 +69,7 @@ class Abc_Base {
 	 *
 	 * @param string $value After prefix value.
 	 */
-	protected function add_prefix( string $value ): string {
+	public static function add_prefix( string $value ): string {
 		return self::PREFIX . '_' . $value;
 	}
 

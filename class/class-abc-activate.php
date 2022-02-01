@@ -54,6 +54,15 @@ class Abc_Activate extends Abc_Base {
 	}
 
 	/**
+	 * Uninstall wp_options column.
+	 */
+	public static function uninstall_options() {
+		foreach ( self::OPTIONS_COLUMN as $option_name ) {
+			delete_option( self::add_prefix( $option_name ) );
+		}
+	}
+
+	/**
 	 * Search & create wp_option column.
 	 *
 	 * @param string                $column wp_option column name.

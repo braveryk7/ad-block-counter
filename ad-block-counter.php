@@ -44,3 +44,9 @@ new Abc_Rinker_Process();
  * Plugin activate.
  */
 new Abc_Activate( __FILE__ );
+
+/**
+ * Plugin uninstall hook.
+ * Delete wp_options column.
+ */
+register_uninstall_hook( __FILE__, 'Abc_Activate::uninstall_options' );
