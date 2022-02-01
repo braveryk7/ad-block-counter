@@ -33,8 +33,8 @@ class Abc_Activate extends Abc_Base {
 	 */
 	public function register_options() {
 		$add_css_init_message =
-			__( '// Rinkerに追加したいCSSを入力してください', 'ad-block-counter' ) . "\n" .
-			__( '// 入力されたid/class名は自動で変換されます', 'ad-block-counter' ) . "\n";
+			__( '// Enter the CSS you want to add to Rinker', 'ad-block-counter' ) . "\n" .
+			__( '// Entered id/class names will be automatically converted', 'ad-block-counter' ) . "\n";
 
 		$this->option_exists( $this->add_prefix( 'use_rinker' ), false );
 		$this->option_exists( $this->add_prefix( 'rinker_classes' ), $this->create_options() );
