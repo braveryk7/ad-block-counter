@@ -18,7 +18,7 @@
 		"@uiw/react-codemirror": "^4.3.3",
 		"@wordpress/components": "^19.3.0",
 		"@wordpress/element": "^4.1.0",
-		"@wordpress/i18n": "^4.3.0"
+		"@wordpress/i18n": "^4.3.1"
 	},
 	"devDependencies": {
 		"@types/wordpress__components": "^19.3.0",
