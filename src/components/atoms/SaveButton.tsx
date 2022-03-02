@@ -18,7 +18,7 @@ export const SaveButton = ( props: CssEditorPropsType ) => {
 		setApiData( newItem );
 	};
 
-	useSetApi( itemKey!, apiData.abc_add_css! );
+	useSetApi( itemKey, apiData.abc_add_css );
 	return (
 		<Button
 			className="css-editor-button"
