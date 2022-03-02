@@ -9,13 +9,14 @@ import { SaveButton } from '../atoms/SaveButton';
 export const CssEditor = () => {
 	const { apiData } = useContext( apiContext );
 	const [ editorValue, setEditorValue ] = useState< string >(
-		apiData.abc_add_css!
+		apiData.abc_add_css
 	);
 
 	return (
 		<div className={ `${ PREFIX }-item-wrapper ${ PREFIX }-css-editor` }>
 			<h2>{ __( 'Edit CSS for Rinker', 'ad-block-counter' ) }</h2>
 			<CodeEditor
+				itemKey=""
 				editorValue={ editorValue }
 				setEditorValue={ setEditorValue }
 			/>
