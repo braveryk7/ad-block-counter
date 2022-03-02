@@ -1,3 +1,3 @@
 export type useSetApiType = {
-	( itemKey: string, value: string | boolean | {} ): void;
+	( itemKey: string, value: string | boolean | object ): void;
 };
