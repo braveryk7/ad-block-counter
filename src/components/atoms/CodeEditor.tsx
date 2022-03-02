@@ -1,9 +1,9 @@
 import { css } from '@codemirror/lang-css';
 import CodeMirror from '@uiw/react-codemirror';
 
-import { CssEditorPropsType } from '../../types/ComponentsType';
+import { CodeEditorPropsType } from '../../types/ComponentsType';
 
-export const CodeEditor = ( props: CssEditorPropsType ) => {
+export const CodeEditor = ( props: CodeEditorPropsType ) => {
 	const { editorValue, setEditorValue } = props;
 
 	return (
@@ -16,7 +16,7 @@ export const CodeEditor = ( props: CssEditorPropsType ) => {
 			max-height="500px"
 			theme="light"
 			extensions={ [ css() ] }
-			onChange={ ( value ) => setEditorValue!( value ) }
+			onChange={ ( value ) => setEditorValue( value ) }
 		/>
 	);
 };

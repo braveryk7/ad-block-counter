@@ -3,7 +3,7 @@ export type TogglePropsType = {
 	label: string;
 };
 
-export type CssEditorPropsType = {
+export type CodeEditorPropsType = {
 	itemKey: string;
 	editorValue: string;
 	setEditorValue: React.Dispatch< React.SetStateAction< string > >;
