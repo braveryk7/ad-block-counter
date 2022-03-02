@@ -33,11 +33,11 @@ export const RinkerStatus = ( props: { rinkerStatus: boolean } ) => {
 			<h2>{ props.rinkerStatus ? disabledTitle : uninstalledTitle }</h2>
 			{ props.rinkerStatus
 				? disabledMessage.map( ( value, i ) => (
-						<p key={ i }>{ value }</p>
-				  ) )
+					<p key={ i }>{ value }</p>
+				) )
 				: uninstalledMessage.map( ( value, i ) => (
-						<p key={ i }>{ value }</p>
-				  ) ) }
+					<p key={ i }>{ value }</p>
+				) ) }
 			<p>
 				<a
 					href="https://oyakosodate.com/rinker/"
