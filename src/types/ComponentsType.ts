@@ -6,5 +6,5 @@ export type TogglePropsType = {
 export type CssEditorPropsType = {
 	itemKey: string;
 	editorValue: string;
-	setEditorValue?: React.Dispatch< React.SetStateAction< string > >;
+	setEditorValue: React.Dispatch< React.SetStateAction< string > >;
 };
