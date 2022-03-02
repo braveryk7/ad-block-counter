@@ -3,8 +3,10 @@ export type TogglePropsType = {
 	label: string;
 };
 
-export type CssEditorPropsType = {
-	itemKey?: string;
+export type CodeEditorPropsType = {
+	itemKey: string;
 	editorValue: string;
-	setEditorValue?: React.Dispatch< React.SetStateAction< string > >;
+	setEditorValue: React.Dispatch< React.SetStateAction< string > >;
 };
+
+export type SaveButtonType = Omit<CodeEditorPropsType, 'setEditorValue'>;

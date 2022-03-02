@@ -11,16 +11,20 @@ export const Toggle = ( props: TogglePropsType ) => {
 	const { itemKey, label } = props;
 	const { apiData, setApiData } = useContext( apiContext );
 
-	let checked: boolean = false;
+	let checked = false;
 	let setApiValue = false;
 	switch ( itemKey ) {
 		case addPrefix( 'use_rinker' ):
-			checked = apiData.abc_use_rinker!;
-			setApiValue = apiData.abc_use_rinker!;
+			if ( apiData.abc_use_rinker ) {
+				checked = apiData.abc_use_rinker;
+				setApiValue = apiData.abc_use_rinker;
+			}
 			break;
 		case addPrefix( 'logged_in_user' ):
-			checked = apiData.abc_logged_in_user!;
-			setApiValue = apiData.abc_logged_in_user!;
+			if ( apiData.abc_logged_in_user ) {
+				checked = apiData.abc_logged_in_user;
+				setApiValue = apiData.abc_logged_in_user;
+			}
 			break;
 	}
 

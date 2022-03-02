@@ -4,10 +4,10 @@ import { __ } from '@wordpress/i18n';
 
 import { apiContext } from '../..';
 import { useSetApi } from '../../hooks/useSetApi';
-import { CssEditorPropsType } from '../../types/ComponentsType';
+import { SaveButtonType } from '../../types/ComponentsType';
 import { apiType } from '../../types/apiType';
 
-export const SaveButton = ( props: CssEditorPropsType ) => {
+export const SaveButton = ( props: SaveButtonType ) => {
 	const { apiData, setApiData } = useContext( apiContext );
 	const { itemKey, editorValue } = props;
 
@@ -18,7 +18,7 @@ export const SaveButton = ( props: CssEditorPropsType ) => {
 		setApiData( newItem );
 	};
 
-	useSetApi( itemKey!, apiData.abc_add_css! );
+	useSetApi( itemKey, apiData.abc_add_css );
 	return (
 		<Button
 			className="css-editor-button"
