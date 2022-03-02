@@ -8,3 +8,5 @@ export type CodeEditorPropsType = {
 	editorValue: string;
 	setEditorValue: React.Dispatch< React.SetStateAction< string > >;
 };
+
+export type SaveButtonType = Omit<CodeEditorPropsType, 'setEditorValue'>;
