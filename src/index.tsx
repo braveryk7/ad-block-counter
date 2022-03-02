@@ -3,16 +3,18 @@ import { render, createContext, useEffect, useState } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 import './scss/index.scss';
+
 import { RinkerStatus } from './components/atoms/RinkerStatus';
 import { ItemList } from './components/organisms/ItemsList';
 import { useGetApi } from './hooks/useGetApi';
 import { apiType } from './types/apiType';
 import { apiContextType, noticeValueType } from './types/useContextType';
+import { getApiInitValue } from './utils/constant';
 
 export const apiContext = createContext( {} as apiContextType );
 
 const AdminPage = () => {
-	const [ apiData, setApiData ] = useState< apiType >( {} );
+	const [ apiData, setApiData ] = useState< apiType >( getApiInitValue() );
 	const [ apiStatus, setApiStatus ] = useState( false );
 	const [ noticeStatus, setNoticeStatus ] = useState( false );
 	const [ noticeValue, setNoticeValue ] = useState(
