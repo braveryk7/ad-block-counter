@@ -7,7 +7,7 @@ export type apiType = {
 };
 
 export type WPApiType< T > = {
-	[ key: string ]: { // eslint-disable-line
+	[ key: string ]: {
 		[ key: string ]: T;
 	};
 };
