@@ -1,6 +1,6 @@
-import { useContext, useEffect, useRef } from '@wordpress/element';
 // @ts-ignore
-import api from '@wordpress/api'; // eslint-disable-line
+import api from '@wordpress/api';
+import { useContext, useEffect, useRef } from '@wordpress/element';
 import { __ } from '@wordpress/i18n';
 
 import { apiContext } from '..';
