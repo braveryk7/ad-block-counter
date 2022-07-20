@@ -28,6 +28,6 @@
 		"@wordpress/scripts": "^23.5.0",
 		"eslint-import-resolver-typescript": "^2.5.0",
 		"stylelint-order": "^5.0.0",
-		"typescript": "^4.6.2"
+		"typescript": "^4.7.4"
 	}
 }
