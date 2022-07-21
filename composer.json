@@ -4,7 +4,7 @@
         "wp-coding-standards/wpcs": "*",
         "phpcompatibility/php-compatibility": "*",
         "wp-cli/wp-cli": "*",
-        "wp-cli/wp-cli-bundle": "*"
+        "wp-cli/wp-cli-bundle": "^2.6"
     },
     "scripts": {
         "post-autoload-dump": [
