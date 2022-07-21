@@ -1,7 +1,7 @@
 {
     "require-dev": {
         "squizlabs/php_codesniffer": "^3.7",
-        "wp-coding-standards/wpcs": "*",
+        "wp-coding-standards/wpcs": "^2.3",
         "phpcompatibility/php-compatibility": "*",
         "wp-cli/wp-cli": "^2.6",
         "wp-cli/wp-cli-bundle": "^2.6"
