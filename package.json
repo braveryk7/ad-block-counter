@@ -17,7 +17,7 @@
 		"@codemirror/lang-css": "^6.1.1",
 		"@uiw/react-codemirror": "^4.19.15",
 		"@wordpress/components": "^19.5.0",
-		"@wordpress/element": "^4.1.0",
+		"@wordpress/element": "^5.7.0",
 		"@wordpress/i18n": "^4.3.1"
 	},
 	"devDependencies": {
