@@ -14,7 +14,7 @@
 		"packages-update": "wp-scripts packages-update"
 	},
 	"dependencies": {
-		"@codemirror/lang-css": "^0.19.3",
+		"@codemirror/lang-css": "^6.1.1",
 		"@uiw/react-codemirror": "^4.19.15",
 		"@wordpress/components": "^19.5.0",
 		"@wordpress/element": "^4.1.0",
